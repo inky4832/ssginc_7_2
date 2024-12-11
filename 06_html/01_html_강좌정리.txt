@@ -298,3 +298,63 @@ title   link  script        p     h1       p           a - href
    <!--
        <p>Hello1</p>
     -->
+
+11. head 태그의 자식태그
+
+  1) <title> 태그
+     - html 문서의 타이틀 지정용도
+     - 웹 브라우저 탭에 보임.
+     - 즐겨찾기 할때 저장되는 값임.
+
+////////////////////////////////////////////////////////
+   요청 URL 문법:
+   http://서버IP:port번호/타겟
+
+   http://127.0.0.1:5500/sample01_head_title.html
+
+   http 는 프로토콜.
+   127.0.0.1 는 서버 IP. ( localhost 와 동일 )
+   5500 는 port 번호 ( live server의 기본포트 번호 )
+   sample01_head_title.html 는 타겟
+////////////////////////////////////////////////////////
+
+
+  2) <style> 태그
+    - CSS 설정방법 중 하나에서 사용됨.
+
+    * CSS 설정방법 3가지
+     가. 인라인 스타일 ( inline 방법 ) 
+        - html태그의 시작태그에서 style 속성을 이용해서 CSS 적용하는 방법.
+	예> <p style="color:red">hello</p>
+           <div style="color:red">hello</div>
+
+     나. 내부 스타일  ( internal 방법 )
+        - <style> 태그내에서 CSS 문법을 이용해서 html 태그를 선택해서 적용하는 방법.
+        예>
+           <head>
+              <style>
+                  p{
+                    color:red;
+		  }
+	      </style>
+	   </head>
+
+	   <p>hello</p>
+
+     다. 외부 스타일  ( external 방법 )
+        - *.css 가진 외부파일로 생성해서 CSS 적용하는 방법.
+	  html 에서는 참조해서 사용가능.
+
+	  예>
+	      test.css
+	          p{
+                    color:red;
+		  }
+ 
+               sample.html
+	       <head>
+	        <link rel="stylesheet" href="test.css" >
+               </head>
+
+
+
