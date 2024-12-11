@@ -357,4 +357,105 @@ title   link  script        p     h1       p           a - href
                </head>
 
 
+  3) <link> 태그
+     - 외부 스타일 ( external ) 지정시 사용.
+      예> <link rel="stylesheet" href="test.css" >
 
+     - favicon 경로지정시에도 사용.
+
+
+  4) <script> 태그
+    - 자바스크립트 사용할 때 사용됨.
+    - <head> 및 <body> 에서 사용가능.
+    - JS 2가지 방법
+
+      가. 내부 (internal)
+         예> <script>
+               js 코드 구현
+	    </script>
+
+
+      나. 외부 (external)
+       - *.js 외부파일로 만듬.
+         html 에서는 참조해서 사용가능.
+
+        예> <script src="*.js"></script>
+	   <script>
+               js 코드 구현
+	   </script>
+
+12. body 태그의 자식태그
+
+ ==> html의 모든 태그는 box로 되어있음.
+ ///////////////////////////////////////
+  box 의 배치방법 2가지
+
+    가. 블럭레벨 
+      - 세로배치
+      - 너비(width)가 웹 브라우저의 전체 너비를 차지하기 때문에
+        이어서 출력되는 태그는 새로운 줄에 랜더링되어 세로배치가 된다.
+	그래서 명시적으로 너비(width)와 높이(height)를 변경할 수 있다.
+      - 대표: div, p, table, h1~h6, ul, ol, li, tr , br, hr...
+
+    나. 인라인 레벨
+     - 가로배치
+     - 너비(width)가 자신이 가진 컨텐츠 크기만큼만 확보함.
+       그래서 명시적으로 너비(width)와 높이(height)를 변경할 수 없다. (지정해도 적용안됨)
+     - 대표: span, a, img ....  
+
+  ==> CSS 를 사용하면 서로간에 변경이 가능하다.
+
+ ////////////////////////////////////////
+  1) header 태그
+   
+    - <h1> ~ <h6>
+    - 번호가 작을수록 크게 보임.
+
+     <h1> : 32px
+     .
+     <h4> : 16px
+
+    -기본폰트 크기는 16px ( 1rem 동일 )
+
+  2) p 태그
+   - 문서의 문단(paragraph) 지정 목적
+
+  3) br 태그
+    - new line 만들 때 사용.  ( 자바의 \n 기능 )
+    - 종료태그 없음 예> <br>
+
+  4) hr 태그
+    - 수평선 제공
+    - 종료태그 없음 예> <br>
+
+  5) 텍스트 포맷 태그 
+   
+    <b>굵은 글자</b>  
+    <hr>
+    <i>이택릭 글자</i> 
+    <hr>
+    <small>작은 글자</small> 
+    <hr>
+    <del>취소선 글자</del>
+    <hr>
+    <ins>밑줄 글자</ins> 
+    <hr>
+    AAA<sub>아래 글자</sub> 
+    <hr>
+    AAA<sup>위 글자</sup> 
+
+  6) 리스트
+
+    가. 순서 없는 리스트 ( unordered list: ul ) (************)
+        
+	<ul>
+          <li>A1</li>
+          <li>A2</li>
+	</ul>
+
+    나. 순서 있는 리스트 ( ordered list : ol )
+
+         <ol>
+          <li>A1</li>
+          <li>A2</li>
+	</ol>
