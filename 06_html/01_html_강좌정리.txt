@@ -181,3 +181,31 @@ html 강좌정리
       - javascript 담당
 
     ==> 모두 서버쪽에 저장되지만 실행은 서버에서 응답될때 다운로드되어서 클라이언트에서 실행된다.
+
+ 
+  6. html 개요
+
+    - html ( hyper text markup language )은 웹 페이지를 작성하기 위한 언어.
+
+      hyper text 의미: 링크(link) 의미
+      markup language 의미: 정보 표시용 방법으로 태그(<>)로 구성되어 있음.
+                          w3c에서 정해진 태그이름이 있음. 예> <div>, <p>
+
+
+    * XML ( eXtensible Markup Language ) 
+      - 확장가능한 마크업 언어로서 태그명을 임의로 지정 가능함. 예> <홍길동>, <ssg>, <person>
+        추가로 특정태그의 사용 규칙을 정할 수도 있음.
+	규칙을 정하는 2가지 방법은 dtd(*.dtd) 와 xsd(*.xsd) 이다.
+      - 용도는 데이터 저장.
+        예> 홍길동 20 서울
+    
+          <person>
+	   <name>홍길동</name>
+	   <age>20</age>
+	   <address>서울</address>
+          </person>
+
+      - 주요특징은 플랫폼(OS,프로그램언어등)에 독립적임.
+        단점은 데이터를 표현하기 위한 추가적인 데이터(메타데이터)가 필요함.
+	해결책으로 나온 방법은 JSON(JavaScript Object Notation) 포맷이다.
+	  {name:"홍길동",age:20,address:"서울"}
