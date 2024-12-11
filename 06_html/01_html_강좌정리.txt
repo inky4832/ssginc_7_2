@@ -209,3 +209,92 @@ html 강좌정리
         단점은 데이터를 표현하기 위한 추가적인 데이터(메타데이터)가 필요함.
 	해결책으로 나온 방법은 JSON(JavaScript Object Notation) 포맷이다.
 	  {name:"홍길동",age:20,address:"서울"}
+
+
+7. html 특징
+
+  - 태그로 구성
+  - 태그는 시작태그와 종료태그로 구성.
+    예> <html>
+         몸체(body) <== 태그
+       </html>
+
+  - 태그는 중첩형태임.
+
+  - 종료태그가 없는 태그도 존재함
+    예> <img>, <input>, <br>, <hr>, <link>
+
+  - 몸체(body)가 없는 태그 ( 빈태그(empty) 라고 부름)
+    예> <태그></태그> <=== <태그/>
+
+  - 태그명은 소문자 권장
+  - 시작태그는 속성을 포함할 수 있고 속성명은 정해져 있음.
+    속성명은 모든 태그에서 사용 가능한 전역속성(id, class, style)도 있고
+    특정 태그(href, value, ...)에서만 사용하는 속성도 있음.
+
+    <태그명  속성명="속성값"  속성명="속성값" .. >
+
+   예> <p>hello</p>
+      <p id="xxx">hello</p> 
+      <p id="xxx" class="yyy">hello</p> 
+
+      <a href=""></a>
+      <input value="">
+
+  - 속성명을 임의로 지정할 수 있음. (커스텀 속성)
+    
+     문법:   data-속성명="속성값"
+
+     예> <p id="xxx" data-ssg="" >hello</p> 
+
+
+8. html 버전
+
+   - html5 버전 사용예정.
+     2014년 표준안 채택됨.
+   - html 작성시에는 항상 사용할 html 버전을 명시해야 된다.
+     이유는 웹 브라우저가 버전을 확인하고 랜더링 한다.
+
+   -  html5 버전설정 방법 ( doctype 이용)
+    
+      <!DOCTYPE html>
+
+9. html 기본 구조
+
+    <!DOCTYPE html>
+    <html>
+      <head>
+         <title></title>
+	 <link>
+	 <script></script>
+      </head>
+      <body>
+         <p>Hello1</p>
+	 <h1>world</h1>
+	 <p>Hello2</p>
+	 <a href="daum.net">다음</a>
+      </body>
+    </html>
+
+  ==> 계층구조가 생김
+     웹브라우저는 다음과 같이 메모리에 DOM 트리를 생성하고 랜더링 함.
+
+                  html (root node 라고 부름)
+		    |
+         head                      body
+	  |                           |
+
+title   link  script        p     h1       p           a - href
+                            |      |       |           |      |
+                       "Hello1"  "world"  "Hello2"    "다음"   "daum.net"
+
+    자식 및 자손, 부모 및 조상, 형제 관계가 존재한다.
+
+    나중에 CSS 또는 JS 이용해서 DOM 트리를 접근할 수 있고 
+    스타일 및 DOM 처리(수정,삭제,추가)를 할 수 있다.
+
+10. html 태그 주석
+
+   <!--
+       <p>Hello1</p>
+    -->
