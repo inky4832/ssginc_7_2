@@ -83,3 +83,80 @@ html 강좌정리
 
      ==> 서블릿은 서버에 저장되고 서버에서 실행되고 동적인 특징을 갖는다.
          즉 항상 동일한 화면이 아닌 동적인 화면을 보여진다.
+
+
+ 2. 요청 URL
+
+   - 필요한 정보
+    1) 서버의 주소: IP번호 또는 도메인
+                210.103.221.3
+
+    2) port 번호
+    3) 타겟 ( test.html, test.jsp, Test.java )
+       ==> 폴더를 이용해서 저장가능
+
+    클라이언트                     서버 ( IP: 210.103.221.3 )
+                               Apache 웹서버 (port: 80) - 생략가능
+			       Tomcat 컨테이너 (port: 8080)
+			       MySQL DB 서버 (port: 3306)
+			       Oracle DB 서버 (port: 1521)
+
+     최종적인 요청 URL
+
+        http://서버IP:port번호/타겟
+	http://서버IP:port번호/폴더/타겟
+
+	https://서버IP:port번호/타겟
+	https://서버IP:port번호/폴더/타겟
+
+    예> http://210.103.221.3:80/test.html
+       http://210.103.221.3:80/폴더/test.html
+
+3. 환경 설정
+
+  1) node 설치
+     
+     https://nodejs.org 에서 다운받고 설치 (기본설치)
+
+     cmd 차에서 node -v 입력하고 버전 확인.
+
+  2) VSC 설치
+     
+     https://code.visualstudio.com/ 에서 다운받고 설치 (기본설치)
+
+     확장패 추가로 설치
+
+4.  웹(web) 개요
+  
+   - 1991년에 World Wide Web(WWW) 용어가 처음 나옴.
+   - 1993년에 웹 표준 단체 창설 ( W3C )
+     
+       http://www.w3c.org
+
+
+     기능은 html/css/javascript 표준안 작성. ( 자바의 인터페이스 기능)
+
+
+     이것은 웹 브라우저에서 실행이 된다. (크롬,엣지, 파이어폭스, .. ) ( 자바의 클래스 기능 )
+     결국 html/css/javascript 은 W3C에서 만들고
+       이것을 실행하는 웹브라우저는 다른 회사에서 만들기 때문에 
+       항상 자신의 웹브라우저가 W3C에서 만든 html/css/javascript 문법을 지원하는지 확인해야 된다.
+
+
+   - 모질라(Mozilla) 사이트 
+    ==> W3C 에서 제안한 표준안을 가장 빠르게 준수해서 가이드 제공.
+    ==> https://developer.mozilla.org
+
+       https://developer.mozilla.org/ko/docs/Web/HTML
+       https://developer.mozilla.org/ko/docs/Learn/HTML
+
+	https://developer.mozilla.org/ko/docs/Web/CSS	
+       https://developer.mozilla.org/ko/docs/Learn/CSS
+
+
+       https://developer.mozilla.org/ko/docs/Web/JavaScript
+       https://developer.mozilla.org/ko/docs/Learn/JavaScript
+      
+     
+     ==> 특정 기능이 모든 브라우저가 제안된 표준안을 준수하는 것은 아니다.
+        따라서 모질라(Mozilla) 사이트에서 지원 여부를 확인할 수 있다.
