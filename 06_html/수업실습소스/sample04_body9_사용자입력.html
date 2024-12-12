@@ -7,16 +7,39 @@
 <body>
     
 	<h2>사용자 입력 태그</h2>
-	이름(*):<input type="text" name="username"> <br>
+	이름(*):<input type="text" name="username" > <br>
 	이름:<input type="text" name="username" value="홍길동"> <br>
 	<input type="text" name="username" maxlength="5" minlength="3" placeholder="이름입력"> <br>
     <hr>
 	비번:<input type="password" name="passwd" >
 	<hr>
 	사과:<input type="checkbox" name="apple" checked >
+	멜로:<input type="checkbox" name="melon" checked="checked" >
 	바나나:<input type="checkbox" name="banana" >
 	<hr>
 	남:<input type="radio" name="gender" value="male" checked>
 	여:<input type="radio" name="gender" value="female">
+	<hr>
+	이메일:<input type="email" name="email" >
+	<hr>
+	age:<input type="number" name="age" step="2" min="10" max="50">
+	<hr>
+	파일:<input type="file" name="file" accept="image/png, image/jpeg, text/html" >
+	파일(멀티):<input type="file" name="file" multiple>
+	<hr>
+	날짜:<input type="date" name="date" >
+	날짜(범위지정):<input type="date" name="date" min="2018-01-01" max="2018-12-31">
+	<hr>
+	색상:<input type="color" name="color" >
+	<hr>
+	과일선택:
+	<select name="fruit">
+		<option value="">--Please choose an option--</option>
+		<option value="apple">사과</option>
+		<option value="banana">바나나</option>
+		<option value="melon">멜론</option>
+  </select>
+  <hr>
+  내용:<textarea name="content" rows="15" cols="15" >홍길동</textarea>
 </body>
 </html>
