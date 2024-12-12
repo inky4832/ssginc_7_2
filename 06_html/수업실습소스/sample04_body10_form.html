@@ -1,0 +1,26 @@
+<!-- sample04_body10_form.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>form 태그 실습</title>
+</head>
+<body>
+
+	<h2>로그인 화면1- GET방식</h2>
+	<form action="target.html" method="get">
+		아이디: <input type="text" name="userid"> <br>
+		비밀번호: <input type="password" name="passwd"> <br>
+		<input type="submit" value="로그인">
+		<button>로그인2</button>
+		<!-- <input type="button" value="로그인3"> 서브밋 안됨 -->
+		<input type="reset" value="취소" />
+	</form>
+	<h2>로그인 화면2- POST방식</h2>
+	<form action="target.html" method="post">
+		아이디: <input type="text" name="userid"> <br>
+		비밀번호: <input type="password" name="passwd"> <br>
+		<input type="submit" value="로그인">
+		<input type="reset" value="취소" />
+	</form>
+</body>
+</html>
