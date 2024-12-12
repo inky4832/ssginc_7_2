@@ -631,8 +631,74 @@ title   link  script        p     h1       p           a - href
 	 </textarea>
 
 
-     12) 사용자 입력 태그 작성후 입력된 사용자를 데이터를 서버에 전달하는 방법. (***************)
+     12) 사용자 입력 태그 작성후 입력된 사용자 데이터를 서버에 전달하는 방법. (***************)
 
         - <form> 태그 이용
 
-	 
+	 예>
+	     <form action="타겟(서블릿|JSP|html)" method="get(기본)|post">
+                아이디: <input type="text" name="userid"> <br>
+		비밀번호: <input type="password" name="passwd"> <br>
+
+                <input type="submit" value="로그인">
+		<input type="reset" value="취소" />
+	     </form>
+
+	 submit 하면 action에 지정된 타겟으로 요청이 된다.
+	 이때 사용자 입력 데이터는 기본적으로 웹 브라우저의 URL 이용해서 전달(get방식)된다.
+	 또 다른 방법은 URL 이용하지 않고 숨겨서 전달되는 방식(post방식)도 있다. ( method 속성이용)
+	 형식은 다음과 같다.
+
+	 http://localhost:port/타겟?tag의name값=사용자입력값&tag의name값=사용자입력값&tag의name값=사용자입력값...
+
+	 예> http://localhost:5500/target.html?userid=aaa&passwd=1234
+
+
+	   userid=aaa&passwd=1234 <== query string 이라고 부른다.
+	                              그리고 query string은 URL에 포함안됨.
+
+
+       - 클라이언트(웹 브라우저)에서 서버로 요청(새로고침, a 태그 이용한 링크, 
+                                       직접 웹브라우저에서 url 입력후 엔터,
+                                       form 태그 이용한 사용자 입력 데이터를 전달)하는 2가지 방법
+
+           가. GET 방식
+	     - 기본 방식
+             - 사용자 입력데이터는 URL에  query string 형식으로 전달된다.
+              다음은 요청했을 때 서버에 전달되는 데이터 구조이다.
+                header: 
+		         url 정보 http://localhost:5500/target.html?userid=aaa&passwd=1234
+                         host정보
+			 웹브라우저 정보( user-agent )
+			 ..
+	         -------------
+                body  :
+               (payload 탭확인 가능 )
+
+	   나. POST 방식
+	      - 사용자 입력데이터는 URL에 포함되지 않고 body 에 숨겨셔서 전달된다.
+              다음은 요청했을 때 서버에 전달되는 데이터 구조이다.
+                header: 
+		         url 정보 http://localhost:5500/target.html
+                         host정보
+			 웹브라우저 정보( user-agent )
+			 ..
+	         -------------
+                body  :  userid=aaa&passwd=1234
+               (payload 탭확인 가능 )
+
+
+
+
+     //////////////////////////////////////////////////////////////////////
+           * 요청 method 방식이 일치하는 경우
+
+	    브라우저                    서버
+ 	                              target.html
+            
+	    직접 ULR 이용 (get방식)-------------> target.html(get만 가능)
+
+                                     요청방법이 일치안됨( 405 에러 발생 )
+	    form 에서 method="post" -------------> target.html(get만 가능)
+     //////////////////////////////////////////////////////////////////////
+
