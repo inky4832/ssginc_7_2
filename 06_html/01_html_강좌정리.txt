@@ -641,6 +641,8 @@ title   link  script        p     h1       p           a - href
 		비밀번호: <input type="password" name="passwd"> <br>
 
                 <input type="submit" value="로그인">
+		<button>로그인2</button>
+		<!-- <input type="button" value="로그인3"> 서브밋 안됨 -->
 		<input type="reset" value="취소" />
 	     </form>
 
@@ -705,4 +707,40 @@ title   link  script        p     h1       p           a - href
                                      요청방법이 일치안됨( 405 에러 발생 )
 	    form 에서 method="post" -------------> target.html(get만 가능)
      //////////////////////////////////////////////////////////////////////
+
+
+  13) image 보기
+
+    문법:
+     
+        <img src="이미지파일" alt="대체 텍스트" width="" height="">
+
+   14) 화면 재사용
+      - 외부 html 파일을 이용해서 화면 처리
+
+      <iframe src="외부 html 파일"> </iframe>
+
+   
+   15) 특수문자
+     - 기본적으로 html에서는 탭이나 스페이스바가 적용안됨.
+
+     공백: &nbsp;
+     <  : &lt;
+     >  : &gt;
+     "  : &quot;
+     &  : &amp;
+
+   
+   16) 경로 (******************)
+
+
+      - 개념:
+          현재 html(css,js)에서 외부 파일( html,css,js, image 등 )을 참조할 때 위치(경로)를 알려주는 방법.
+
+      - 경로지정 방법 2가지
+
+       가. 절대 경로
+
+       나. 상대 경로
+
 
