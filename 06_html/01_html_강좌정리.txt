@@ -733,14 +733,41 @@ title   link  script        p     h1       p           a - href
    
    16) 경로 (******************)
 
+    http://127.0.0.1:5500/target.html
 
       - 개념:
           현재 html(css,js)에서 외부 파일( html,css,js, image 등 )을 참조할 때 위치(경로)를 알려주는 방법.
 
       - 경로지정 방법 2가지
 
+       예>  http://127.0.0.1:5500/images/a.jpg
+             http://127.0.0.1:5500/external.js
+	     http://127.0.0.1:5500/external.css
+	     
+	     <img src="http://127.0.0.1:5500/images/a.jpg" >
+             <script src="http://127.0.0.1:5500/external.js"></script>
+	     <link rel="stytlsheet" href="http://127.0.0.1:5500/external.css" >
+
+
        가. 절대 경로
+         -  반드시 / 로 시작한다. <== http://127.0.0.1:5500/  동일
+	   즉 / 기준임.
+
+	     <script src="http://127.0.0.1:5500/01_html2/app1/test.js"></script>
+	     <script src="/01_html2/app1/test.js"></script>
 
        나. 상대 경로
+         - . 또는  .. 로 시작한다.
+	   . : 현재 디렉터리
+	   ..: 부모 디렉터리
+          기준은 현재 화면에 보여지는 경로 기준임.
 
 
+   # full url 경로
+   http://127.0.0.1:5500/01_html2/main/main.html
+
+
+   http://127.0.0.1:5500/01_html2/app1/sample.html
+   http://127.0.0.1:5500/01_html2/app1/test.js
+   http://127.0.0.1:5500/01_html2/app1/test.css
+   http://127.0.0.1:5500/01_html2/app1/images/a.jpg
