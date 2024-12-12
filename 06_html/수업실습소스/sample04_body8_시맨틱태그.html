@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Blog Site</title>
+<style>
+
+/*페이지의 내용을 가운데에 놓고, 기본적인 폰트를 설정*/
+body{
+	width:960px;
+	margin:auto;
+	font-family:Arial,"MS Trebuchet", sans-serif;
+}
+/*헤더의 넓이를 정함*/
+header#page_header{
+	width:100%;
+}
+/*네비게이션을 가로 바 형대로 만듬*/
+header#page_header nav ul, #page_footer nav ul{
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+/*margin : 상 우 하 좌*/
+#page_header nav ul li, footer#page_footer nav ul li{
+	padding:0;
+	margin:0 20px 0 0;
+	display:inline;
+}
+p{
+	margin:0 20px 0 0;
+}
+section#posts{
+	float:left;
+	width:74%;
+}
+section#posts aside{
+	float:right;
+	width:35%;
+	margin-left:5%;
+	font-size:20px;
+	line-height:40px;
+}
+aside{
+	float:left;
+	width:25%;
+}
+/*float를 해제해서 페이지 하단에 안착시킴*/
+footer{
+	clear:both;
+	width:100%;
+	text-align:center;
+}
+footer li{
+	display: inline;
+ }
+
+</style>
+</head>
+<body>
+<!-- header : 회사의 로고,타이틀,메뉴 -->
+<header id="page_header">
+	<h1>Star Blog</h1>
+	<!-- nav : 메뉴 -->
+	<nav>
+		<ul>
+			<li><a href="1.html">최근 글</a></li>
+			<li><a href="2.html">이전 글</a></li>
+			<li><a href="3.html">공헌자 글</a></li>
+			<li><a href="4.html">연락처(Tel)</a></li>
+		</ul>
+	</nav>
+</header>
+<!-- section : 페이지의 논리적 영역(내용 부분) -->
+<section id="posts">
+	<article class="post">
+		<!-- 내용의 작은 제목 -->
+		<header>
+			<h2>얼마나 많이 기록해 둬야 되겠습니까?</h2>
+			<p>Posted by Brain on 2012.10.08</p>
+		</header>
+		<!-- aside : 인용구,덧붙이고 싶은 생각, 관련된 링크 -->
+		<aside>
+			<p>
+				&quot;물건을 팔 때는 거절할 기회를 주어선 안 됩니다.&quot;
+			</p>
+		</aside>
+		<p>
+물건을 팔 때의 대원칙은, 고객이 빈손으로 돌아가게 만들면 이미 글렀다는 겁니다.
+다시 오려고 하지 않을테니까요. 따라서 고객을 대할 때는 적극적인 자세를 취해야
+합니다. 그렇다고 너무 오버하면 고객이 겁을 먹고 돌아가 버릴 수도 있으니 조심해야
+합니다.			
+		</p>
+		<p>
+대화가 끊어지지 않게 이어 나가는 한 가지 요령을 알려드리죠. 네, 아뇨라고 대답할
+수 있는 질문을 피하라는 겁니다. 예를 들어, 서비스 플랜을 판매중이라면,절대 
+&quot;3년 서비스 플랜과 5년 서비스 플랜이 있는데, 들어보시겠습니까?&quot; 
+하는 식으로 말문을 열어선 안 됩니다. 이런 식으로 해야죠. &quot;3년 서비스 
+플랜과 5년 서비스 플랜이 있는데, 그 중 어떤 것이 더 좋으십니까?&quot;
+언뜻 보기엔 똑같은 질문으로 보이고, 고객이 거절할 수 있다는 점은 마찬가지지만,
+두 번째 질문은 단순히 &quot;아뇨&quot;라고 말할 수 없기 때문에 거절하기가 더
+힘듭니다.		
+		</p>
+			<p><a href="comments.html">25 Comments</a></p>
+	</article>
+</section>
+<!-- 사이드 바 -->
+<aside>
+	<nav>
+		<h3>이전 글</h3>
+		<ul>
+			<li><a href="1.html">2012년1월</a></li>
+			<li><a href="2.html">2012년2월</a></li>
+			<li><a href="3.html">2012년3월</a></li>
+			<li><a href="4.html">2012년4월</a></li>
+			<li><a href="5.html">2012년5월</a></li>
+			<li><a href="6.html">2012년6월</a></li>
+			<li><a href="7.html">2012년7월</a></li>
+		</ul>
+	</nav>
+</aside>
+<!-- footer : 저작권이나 사이트 소유자에 대한 정보 등 -->
+<footer>
+	<p>&copy; 2012 Star Blog</p>
+		<ul>
+			<li><a href="home.html">홈페이지</a></li>
+			<li><a href="about.html">회사소개</a></li>
+			<li><a href="address.html">연락처</a></li>
+			<li><a href="board.html">게시판</a></li>
+		</ul>
+</footer>
+
+
+
+
+</body>
+</html>
