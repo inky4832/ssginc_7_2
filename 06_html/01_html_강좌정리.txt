@@ -675,6 +675,8 @@ title   link  script        p     h1       p           a - href
                 body  :
                (payload 탭확인 가능 )
 
+             - 멱등성이 있음. ( 멱등성? 클라이언트에서 동일한 요청을 여러번 했을 때 서버에서 변경사항이 발생되지 않음 )
+
 	   나. POST 방식
 	      - 사용자 입력데이터는 URL에 포함되지 않고 body 에 숨겨셔서 전달된다.
               다음은 요청했을 때 서버에 전달되는 데이터 구조이다.
@@ -687,6 +689,8 @@ title   link  script        p     h1       p           a - href
                 body  :  userid=aaa&passwd=1234
                (payload 탭확인 가능 )
 
+              - 멱등성이 없음. 
+	        이유는 post는 새로운 데이터를 생성(insert)할 때 주로 사용되는 요청방식이기 때문이다.
 
 
 
