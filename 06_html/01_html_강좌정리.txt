@@ -501,3 +501,43 @@ title   link  script        p     h1       p           a - href
 
 	   target="_self"  (기본값, 현재 창)
 	   target="_blank"  (새로운 창)
+
+     8) table 태그
+
+       문법:
+          <table>
+            <tr>
+               <th>이름</th>
+	       <th>나이</th>
+	    </tr>
+            <tr>
+               <td>홍길동</td>
+               <td>20</td>
+	    </tr>
+	  </table>
+
+      
+      - 그룹핑 가능 ( 권장함 )
+
+       예>  
+          제품명  가격  <== <thead>
+           A    100
+	   B    200  <== <tbody>
+	  총합   300  <== <tfoot>
+
+      - 병합
+        
+	 가. 열병합
+            - colspan="갯수"
+ 
+           예>
+	        이름     전화1     전화2
+                홍길동    010      011
+
+            ==> 병합후
+
+	        이름         전화
+                홍길동    010      011
+ 
+	 나. 행병합
+	   - rowspan="갯수"
