@@ -541,3 +541,63 @@ title   link  script        p     h1       p           a - href
  
 	 나. 행병합
 	   - rowspan="갯수"
+
+	   예>
+	       이름   홍길동
+	       전화1  010
+	       전화2  011
+
+	      ==> 병합후
+
+	       이름   홍길동
+	              010
+               전화번호
+	              011
+
+    9) 태그 및 특정값 그룹핑
+
+      가. 태그 그룹핑
+	- 전통적으로 <div> 사용. 
+	( 현재는 시멘틱 태그( <nav>, <header>, <main>, <footer>, <aside>, <section>,.)와 병행해서 같이 사용됨 )
+        - 블럭 레벨 이다. ( 웹 브라우저의 전체 너비(width)를 영역 차지함. width와 height 를 명시적으로 지정하면 적용됨 )
+
+      나. 특정값(문자열) 그룹핑
+        - <span> 사용.
+	- 인라인 레벨 이다. ( 자신의 컨텐츠 크기만큼만 영역 차지함. width와 height 를 명시적으로 지정해도 적용 안됨 )
+
+    10) 시멘틱 태그 ( sementic tag )
+
+       개념: '의미를 갖는다' 뜻으로 각 태그가 자신만의 특정 의미가 있음을 알려줄 수 있다.
+       종류:
+         <header> : 웹 사이트 소개 및 정보
+	           과거에는 <div id="header">
+	 <main>   : 웹 사이트의 메인 항목. 과거에는 <div id="main">
+	 <section> : 실제 문서 내용 포함.
+	 <article> : 문서 내용이 많을 경우 여러 개의 주제로 묶을 때 사용.
+	 <nav>     : 사이트 메뉴
+	 <aside>   : 배너 광고 포함.
+	 <footer>  : 회사 소개 및 저작권 정보 포함
+
+    11) 사용자 입력 태그 
+
+      가. 단일값 입력
+        
+	 <input type="text" name="username" >
+
+      나. 비번 입력
+        
+	 <input type="password" name="passwd" >
+
+      다. 체크박스
+        - 여러개 선택 가능
+        - 처음부터 체크된 상태 가능 ( checked 속성 이용 )
+
+	 <input type="checkbox" name="apple" >
+	 <input type="checkbox" name="banana" checked>
+
+      라. 라디오 버튼
+        - 한개만 선택 가능하고 반드시 name 값이 동일해야 된다.
+	- 처음부터 체크된 상태 가능 ( checked 속성 이용 )
+
+	 <input type="radio" name="gender" checked>
+	 <input type="radio" name="gender" >
