@@ -583,6 +583,7 @@ title   link  script        p     h1       p           a - href
       가. 단일값 입력
         
 	 <input type="text" name="username" >
+	 <input type="text" name="username" value="홍길동">
 
       나. 비번 입력
         
@@ -599,5 +600,39 @@ title   link  script        p     h1       p           a - href
         - 한개만 선택 가능하고 반드시 name 값이 동일해야 된다.
 	- 처음부터 체크된 상태 가능 ( checked 속성 이용 )
 
-	 <input type="radio" name="gender" checked>
+	 <input type="radio" name="gender" checked>  checked="checked" 동일
 	 <input type="radio" name="gender" >
+ 
+      마. email 입력
+         - 반드시 email 포맷을 지정해야 된다.
+	   @ 가 반드시 필요.
+
+	 <input type="email" name="email" >
+
+      바. number, file, date, color 입력
+
+	 <input type="number" name="age" step="2" min="10" max="50">
+	 <input type="file" name="file" accept="image/png, image/jpeg, text/html" >
+	 <input type="date" name="date" >
+	 <input type="color" name="color" >
+
+      사. select 태그
+
+         <select name="fruit">
+           <option value="apple">사과</option>
+           <option value="banana">바나나</option>
+           <option value="melon">멜론</option>
+	 </select>
+
+      아. 멀티값 입력
+       
+         <textarea name="content" rows="5" cols="5">
+	  홍길동	
+	 </textarea>
+
+
+     12) 사용자 입력 태그 작성후 입력된 사용자를 데이터를 서버에 전달하는 방법. (***************)
+
+        - <form> 태그 이용
+
+	 
