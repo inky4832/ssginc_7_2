@@ -459,3 +459,45 @@ title   link  script        p     h1       p           a - href
           <li>A1</li>
           <li>A2</li>
 	</ol>
+
+  
+   7)  a 태그 ( anchor 태그 )
+    
+       - 페이지간에 연결(링크)시 사용됨.
+       - 인라인 레벨 (가로배치)
+       - 기본적으로 링크 색상이 달라진다. ( 방문전: blue, 방문후: purple, 활성화(누르고 있을때): red )
+         CSS 이용해서 색상 변경이 가능.
+       - 문법:
+
+         <a href="타겟">링크</a>
+
+       - 종류
+
+         가. 외부링크
+
+            <a href="외부파일">링크</a>
+	    <a href="http://www.google.com">링크</a>
+
+         나. 내부링크
+
+	    // 링크 설정
+            <a href="#java">java로 가기</a>
+            <a href="#Sql">Sql로 가기</a>
+            ..
+	    ..
+
+	    //타겟위치 설정
+	    <a id="java">Java</a>
+	    <a id="Sql">Sql</a>
+
+         다. 외부링크+내부링크
+ 
+             <a href="target.html#java">링크</a>
+
+
+       - target 속성
+         ==> 링크된 문서를 어디에서 보여줄지를 설정가능.
+
+
+	   target="_self"  (기본값, 현재 창)
+	   target="_blank"  (새로운 창)
