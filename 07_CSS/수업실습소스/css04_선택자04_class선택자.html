@@ -1,0 +1,29 @@
+<!-- css04_선택자04_class선택자.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>class 선택자</title>
+    <style>
+       .select{
+        color: red;
+       }
+       .xxx{
+        font-size: 40px;
+       }
+       /* p 태그이면서 class="select" 참조 */
+       p.select{  
+        background-color: yellow;
+       }
+    </style>
+ </head>
+<body>
+   
+   <ul>
+    <li class="select">A1</li>
+    <li>A2</li>
+    <li class="select xxx">A3</li>
+    <li>A4</li>
+   </ul>
+   <p class="select">Hello</p>
+</body>
+</html>
