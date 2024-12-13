@@ -1,0 +1,40 @@
+<!-- css04_선택자07_의사클래스5_nth-child.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> :nth-child 의사 클래스  선택자</title>
+    <style>
+      
+        /* 2 번째 li */
+        li:nth-child(2){
+          color: red;
+        }
+        
+        /* 짝수번 째 */
+        /* li:nth-child(2n){ */
+        li:nth-child(even){
+          background-color: yellow;
+        }
+      
+        /* 홀수번 째 */
+        /* li:nth-child(2n+1){ */
+        li:nth-child(odd){
+          font-size: 40px;
+        }
+
+    </style>
+ </head>
+<body>
+
+    <ul>
+      <li>A1</li>
+      <li>A2</li>
+      <li>A3</li>
+      <li>A4</li>
+      <li>A5</li>
+      <li>A6</li>
+    </ul>
+
+</body>
+
+</html>

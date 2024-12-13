@@ -1,0 +1,34 @@
+<!-- css04_선택자07_의사클래스6_사용자입력_focus_checked_enabled.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> :focus 의사 클래스  선택자</title>
+    <style>
+      
+       input:focus{
+         background-color: yellow;
+       }
+
+       input:checked{
+        outline: 3px solid red;
+       }
+
+       input:disabled{
+        background-color: aqua;
+       }
+    </style>
+ </head>
+<body>
+
+    아이디: <input type="text" name="userid"> <br>
+    이름: <input type="text" name="username"> <br>
+    <hr>
+    사과: <input type="checkbox" name="fruit"> <br>
+    바나나: <input type="checkbox" name="fruit"> <br>
+    <hr>
+    이메일: <input type="text" name="email" enabled> <br>
+    주소: <input type="text" name="addres" disabled value="부산"> <br>
+
+</body>
+
+</html>

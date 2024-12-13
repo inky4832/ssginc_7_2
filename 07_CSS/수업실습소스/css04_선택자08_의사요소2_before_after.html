@@ -1,0 +1,28 @@
+<!-- css04_선택자08_의사요소2_before_after.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> ::before , ::after 의사 클래스  선택자</title>
+    <style>
+      
+      p::before{
+        content: '안녕하세요 ';
+      }
+
+      p::after{
+        content: ' 님~ ';
+      }
+
+      div::before{
+        content: url('images/a.jpg');
+      }
+    </style>
+ </head>
+<body>
+
+     <p>홍길동</p>
+     <div>이순신</div>
+
+</body>
+
+</html>
