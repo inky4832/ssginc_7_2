@@ -1,0 +1,32 @@
+<!-- css01_html에적용하는방법3가지.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>css 적용방법 3가지</title>
+    <style>
+        #xxx{
+           color: blue;
+        }
+        .yyy{
+           background-color: yellow;
+        }
+    </style>
+    <link rel="stylesheet" href="test.css">
+</head>
+<body>
+
+
+     <!-- 인라인 스타일 -->
+     <p style="color:red">Hello1</p>
+     <p style="color:red; background-color: yellow;">Hello2</p>
+     <hr>
+
+     <!-- 내부 스타일 -->
+     <p id="xxx">World1</p>
+     <p class="yyy">World2</p>
+     <hr>
+     <!-- 외부 스타일 -->
+      <span>Happy1</span>
+      <div id="zzz">Happy2</div>
+</body>
+</html>
