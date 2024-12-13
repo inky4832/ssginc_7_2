@@ -262,3 +262,115 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity
 	예> a[href*="www"]{
 
 	    }
+
+
+5.  의사코드 ( pseudo code )
+  
+   - html의 시멘티 태그처럼 이름안에 기능이 내포되어 있는 선택자 의미.
+
+
+  1) 의사 클래스  ( pseudo class )
+    - :클래스명
+
+     예> :first-child
+        :last-child
+	:only-child
+	:checked
+	...
+
+     가. a 태그의 link 관련 의사 클래스 ( 순서 중요 )
+
+        방문전(기본:blue):       a:link { color:red;}
+	방문후(기본:purple):     a:visited { color:green;}
+	마우스오버:              a:hover { color:yellow;}
+	누르고 있을때(기본:red):   a:active { color:blue;}
+
+
+      나. 자식 선택하는 의사 클래스 ( 지정된 선택자의 부모 기준 (************))
+
+         a.  선택자:first-child 
+
+          예> p:first-child {} <== p 태그를 찾고 찾은 p태그의 첫 번째 자식을 참조 ( X )
+	                          p 태그의 부모를 찾고 그 부모의 첫번째 자식인 p태그 참조 (o)
+
+             선택자:first-of-type {} 
+	     p:first-of-type {} < == 부모를 찾기전에 선처리로 p만 모두 추출후 
+	                            p 태그의 부모를 찾고 그 부모의 첫번째 자식인 p태그 참조 (o)
+
+
+         b.  선택자:last-child 
+
+          예> p:last-child {} <== p 태그를 찾고 찾은 p태그의 마지막 자식을 참조 ( X )
+	                          p 태그의 부모를 찾고 그 부모의 마지막 자식인 p태그 참조 (o)
+
+
+        c.  선택자:only-child 
+
+          예> p:only-child {} <== p 태그의 부모를 찾고 그 부모의 유일한 자식인 p태그 참조 (o)
+
+        d.  n 번째 자식, 배수 , 짝수, 홀수
+	  
+	    선택자:nth-child(n) < ==  n 번째 자식 참조,  1 부터 시작
+	     
+   
+            선택자:nth-child(2n) < == n에 1 부터 값을 설정해서 2,4,6, 짝수번째
+            선택자:nth-child(even)
+
+	    선택자:nth-child(2n+1) < == 홀수번째
+            선택자:nth-child(odd)
+
+
+     다. 사용자 입력 태그에서 사용하는 의사 클래스
+
+          a.   :focus  <== 포커스를 받았을 때
+
+	   예> input:focus{ }    // blur 는 focus를 잃어버렸을 때
+
+          b.  :checked <== checkbox 및 select 태그에서 값을 선택했을 때
+
+            예> input:checked{ }   
+
+          c.  :enabled  <== 활성화
+	      :disabled <== 비활성화
+
+	    예>input:enabled{ }
+              input:disabled{ } 
+ 
+
+  2) 의사 요소 ( pseudo elements )
+   -  ::요소
+   - 의사 클래스는 태그 전체(whole)가 스타일이 적용되고
+     의사 요소는  부분(part)적으로 스타일이 적용됨.
+
+    예> ::first-line
+       ::before
+       ::after
+
+     가. ::first-line
+
+       - 문단의 첫줄
+
+       예>  p::first-line{}
+
+           <p>
+              AAA1 <br>
+              AAA2 <br>
+              AAA3 <br>
+	   </p>
+
+     나. ::first-letter
+
+       - 텍스트의 첫글자
+
+       예> p::first-letter{}
+
+    
+     다. 특정요소에 컨텐츠(문자열,image등) 삽입
+
+         ::after{
+             content: 값|url('이미지경로')
+	 }
+
+	 ::before{
+             content: 값|url('이미지경로')
+	 }
