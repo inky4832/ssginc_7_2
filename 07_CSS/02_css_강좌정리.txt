@@ -1,0 +1,95 @@
+ CSS ( Cascading StyleSheet ) 강좌정리
+
+ 1. CSS 역할 및 버전
+  
+   1)역할
+     html에 시각적 표현을 지정해서 스타일 관리.
+
+   2)버전
+    
+     CSS1: 1996 년
+     CSS2: 1998 년
+     CSS3: 현재까지 계속 개발중. ( 표준화 버전 )
+
+ 2. html에 CSS 적용하는 방법
+
+   1)인라인 스타일 ( inline style)
+     - html의 시작태그에서 style 속성을 이용해서 스타일 적용
+      예> <p style="color:red">Hello</p>
+
+   2)내부 스타일 ( internal style)
+     - <style> 태그에서 CSS 설정하는 방법
+     예>
+         <head>
+	   <style>
+	      
+	      선택자{
+                css속성명(property): css속성값(value);
+	      }
+     	   </style>
+         </head>
+
+            <div>
+	      <p id="xx" class="main">Hello</p>
+
+   3)외부 스타일 ( external style)
+     - html 파일 외부에 *.css 형식의 파일작성해서 스타일 설정하는 방법.
+       필요한 html에서 참조해서 사용 ( <link rel="stylesheet"  href="*.css" > )
+     - 같은 *.css 파일을 사용하는 여러 html 페이지는 맨 처음 요청한 페이지에서 다운로드 받아서 
+       웹 브라우저 캐시 메모리에 저장된 *.css 파일을 재사용해서 참조한다.
+
+       예>
+           // test.css
+	      선택자{
+                css속성명(property): css속성값(value);
+	      }
+  
+           // html
+            <link rel="stylesheet"  href="test.css" >
+
+
+    4) 우선순위
+     
+        인라인 스타일 > 내부 스타일 > 외부 스타일
+
+
+ 3.  CSS 선수 내용
+
+   1) 캐스케이딩 ( Cascading )
+
+       html
+        |
+     head  body
+            |
+	    div
+	    |
+	    p
+
+     개념: DOM 트리의 상위에서 정의한 스타일이 하위 요소로 전달되는 개념이다.
+          하나의 요소에 여러 스타일이 지정될 수 있다.
+	  이러한 규칙은 충돌이 발생될 수 있다.
+	  하위에서 재정의도 가능.
+
+   2) 명시도 ( Specificity )
+https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity
+
+     개념: 선택자(selector)마다 우선순위가 있음.
+         같은 명시도를 가지면 나중에 정의한 선택자가 적용됨.
+	 명시도만 고려하면 나중에 설정했다고 해서 덮어쓰는 것이 아니다.
+
+     우선순위(*****)
+
+        인라인 > id > class , 속성명(예> href ) > 태그
+
+
+     !important
+      => 권장안함
+      => 기본적인 명시도의 가중치값을 무시하고 가장 최우선 순위를 갖는다.
+ 
+       예>
+          a{
+            color:blueviolet !important;
+          }
+
+      선택자를 결합해서 구체적으로 지정할 수록 명시도가 올라간다.
+      이유는 지정된 선택자를 모두 사용하기 때문이다.
