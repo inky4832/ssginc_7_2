@@ -93,3 +93,106 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity
 
       선택자를 결합해서 구체적으로 지정할 수록 명시도가 올라간다.
       이유는 지정된 선택자를 모두 사용하기 때문이다.
+
+ 4. CSS 선택자 ( selector )
+
+  1)개념
+   
+       html
+        |
+     head        body
+              |        |
+	    div       div
+	     |          |
+	    p         div
+	               | 
+		      span
+
+    DOM 트리에서 특정 태그를 선택하는 방법.
+
+  2) 문법
+
+   가. 전체 선택자
+     - * 표현
+     - DOM 트리에 있는 모든 태그가 선택됨.
+
+     예>
+        <style>
+            *{
+             color:red;
+	    }
+	</style>
+
+   나. 태그 선택자
+     - 태그명으로 표현
+      만약에 여러개 표현할 때는  ,(쉼표) 지정하고 나열.
+     - 명시도 ( 0,0,1 )
+       예>
+        <style>
+            div{
+             color:red;
+	    }
+	    div,p{
+             color:red;
+	    }
+	</style>
+
+   다. id 선택자
+     - #id값 표현
+     - 유일한값 지정.
+     - 명시도 ( 1,0,0 )
+   예>
+        <style>
+            #xxx{
+             color:red;
+	    }
+	    div, #xxx{
+             color:red;
+	    }
+	</style>
+
+	<p id="xxx">hello</p>
+
+
+    라. class 선택자 (**********)
+       - .class값 표현
+       - 중복값 가능
+       - 한번에 여러값을 지정 가능  예> class="값 값1 값2"
+       - 명시도 ( 0,1,0 )
+       예>
+        <style>
+            .xxx{
+              color:red;
+	    }
+	    //헷갈릴만한 내용
+	    span .xxx {} <== span를 찾고 그 자손으로 class="xxx" 인 요소를 찾음.
+	    span.xxx {}  <== and,  span이면서 class="xxx" 인 요소를 찾음.
+	    span, .xxx {} <== or,  span 또는 class="xxx" 인 요소를 찾음.
+	</style>
+
+	<p class="xxx">hello1</p>
+	<p class="yyy zzz">hello2</p>
+	<span class="xxx">hello1</span>
+	<span >hello1</span>
+
+    마. 계층구조1- 자식
+     
+      - 부모태그  >  자식태그
+         예>
+        <style>
+            .xxx > p{
+              color:red;
+	    }
+        </style> 
+
+   마. 계층구조2- 자손 (공백)
+     
+      - 부모태그    자손태그  
+      - 자식포함
+
+         예>
+        <style>
+            .xxx  p{
+              color:red;
+	    }
+        </style> 
