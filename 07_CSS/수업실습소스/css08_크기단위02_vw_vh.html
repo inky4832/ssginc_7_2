@@ -1,0 +1,36 @@
+<!-- css08_크기단위02_vw_vh.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> vw, vh</title>
+    <style>
+      
+      .y{
+        border: 1px solid red;
+        width: 500px;
+        height: 300px;
+      }
+
+      .y2{
+        background-color: blue;
+        position: fixed;
+        width: 50%;
+      }
+      .y3{
+        background-color: yellow;
+        /* position: fixed + width: 50%; */
+        width: 50vw;  
+      }
+    </style>
+ </head>
+<body>
+     <h2>vw, vh </h2>
+     <div class="y">
+      <h1 class="y2">hello1(position:fixed + %)</h1>
+    </div>
+    <div class="y">
+      <h1 class="y3">hello1(vw)</h1>
+    </div>
+</body>
+
+</html>

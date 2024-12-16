@@ -1,0 +1,57 @@
+<!-- css08_크기단위01_position에따른퍼센트.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> position에따른퍼센트</title>
+    <style>
+      
+       #x{
+        border: 1px solid red;
+        width: 500px;
+        height: 500px;
+       }
+  
+       .x2{
+        background-color: blue;
+        width: 50%;
+       }
+
+       .x3{
+        background-color: yellow;
+        width: 50%;
+        position: fixed;
+       }
+
+       .x4{
+        background-color: aqua;
+        width: 50%;
+        position: relative;
+       }
+
+       #y{
+        border: 1px solid red;
+        width: 500px;
+        height: 500px;
+        position: relative;
+      }
+      .y2{
+         border: 1px solid blue;
+         width: 50%;
+         position: absolute;
+       }
+    </style>
+ </head>
+<body>
+     <h2>position에따른퍼센트</h2>
+     <div id="x">
+       <h1 class="x2">hello1(static), 부모가 기준이된다.</h1>
+       <h1 class="x3">hello2(fixed), 뷰포트가 기준이 된다.</h1>
+       <h1 class="x4">hello3(relative), 부모가 기준이된다.</h1>
+     </div>
+     <hr>
+     <div id="y">
+      <h1 class="y2">hello4(absolute)부모가 기준이된다.</h1>
+    </div>
+</body>
+
+</html>
