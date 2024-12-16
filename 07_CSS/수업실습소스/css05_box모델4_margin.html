@@ -1,0 +1,55 @@
+<!-- css05_box모델4_margin.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> margin</title>
+    <style>
+  
+      *{
+        box-sizing: border-box;
+      }
+       
+       div{
+         width: 100px;
+         height: 100px;
+         background-color: red;
+         border: 1px solid blue;
+       }
+       #x1{
+          margin-top: 10px;
+          margin-right: 10px;
+          margin-bottom: 10px;
+          margin-left: 10px;
+       }
+    
+       #x2{
+        /* margin:  top  right  bottom  left */
+          margin: 10px  10px  10px  10px;
+       }
+
+       #x3{
+        /* margin:  top  right|left  bottom   */
+          margin: 10px  10px  10px;
+       }
+
+       #x4{
+        /* margin:  top|bottom  right|left     */
+          margin: 10px  10px;
+       }
+       #x5{
+        /* margin:  top|bottom|right|left     */
+          margin: 10px;
+       }
+    </style>
+ </head>
+<body>
+
+    <div id="x1">Hello1</div>
+    <div id="x2">Hello2</div>
+    <div id="x3">Hello3</div>
+    <div id="x4">Hello4</div>
+    <div id="x5">Hello5</div>
+
+</body>
+
+</html>

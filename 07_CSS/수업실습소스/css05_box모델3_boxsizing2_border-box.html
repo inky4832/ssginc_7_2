@@ -1,0 +1,50 @@
+<!-- css05_box모델3_boxsizng2_border-box.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> box-sizing ( border-box )</title>
+    <style>
+    
+       #x{
+         width: 160px;
+         height: 80px;
+         background-color: yellow;
+         box-sizing: border-box;
+       }
+
+       #x2{
+        /* 
+           실제 width = 160px 
+           실제 height = 80px 
+        */
+         width: 160px;
+         height: 80px;
+         background-color: yellow;
+         box-sizing: border-box;
+
+         border: 8px solid red;
+       }
+       #x3{
+         /* 
+           실제 width = 160px 
+           실제 height = 80px 
+        */
+         width: 160px;
+         height: 80px;
+         background-color: yellow;
+         box-sizing: border-box;
+
+         border: 8px solid red;
+         padding: 20px;
+       }
+    </style>
+ </head>
+<body>
+
+    <div id="x">Hello</div>
+    <div id="x2">Hello2</div>
+    <div id="x3">Hello3</div>
+
+</body>
+
+</html>

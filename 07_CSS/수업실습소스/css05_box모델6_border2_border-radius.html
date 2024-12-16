@@ -1,0 +1,66 @@
+<!-- css05_box모델6_border2_border-radius.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> border-radius </title>
+    <style>
+  
+      *{
+        box-sizing: border-box;
+      }
+       
+       div{
+         width: 100px;
+         height: 100px;
+         margin: 20px;
+         background-color: red;
+         border: 1px solid blue;
+       }
+       #x1{
+           
+          border-top-width: 5px;
+          border-right-width: 5px;
+          border-bottom-width: 5px;
+          border-left-width: 5px;
+
+          border-top-style: solid;
+          border-right-style: dashed;
+          border-bottom-style: dotted;
+          border-left-style: solid;
+
+          border-color: yellow;
+
+          border-radius: 10px;
+       }
+
+       #x2{
+
+         /* border-width: top|bottom  right|left    // 2개 지정 */
+           border-width: 5px 5px;
+
+           /* border-style: top|bottom  right|left    // 2개 지정 */
+           border-style: solid  dotted;
+         
+           border-color: yellow  aqua;
+ 
+           border-radius: 40px;
+        }
+
+        #x3{
+          border: 5px  solid  yellow;
+          
+          border-radius: 50%;
+        }
+
+    </style>
+ </head>
+<body>
+
+    <div id="x1">Hello1</div>
+    <div id="x2">Hello2</div>
+    <div id="x3">Hello3</div>
+
+
+</body>
+
+</html>

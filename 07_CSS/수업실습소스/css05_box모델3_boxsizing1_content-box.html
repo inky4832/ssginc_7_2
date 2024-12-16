@@ -1,0 +1,50 @@
+<!-- css05_box모델3_boxszing1_content-box.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> box-sizing ( content-box )</title>
+    <style>
+    
+       #x{
+         width: 160px;
+         height: 80px;
+         background-color: yellow;
+         box-sizing: content-box;
+       }
+
+       #x2{
+        /* 
+           실제 width = 160px + 16px ( 176 px)
+           실제 height = 80px + 16px ( 96 px)
+        */
+         width: 160px;
+         height: 80px;
+         background-color: yellow;
+         box-sizing: content-box;
+
+         border: 8px solid red;
+       }
+       #x3{
+         /* 
+           실제 width = 160px + 16px + 40px ( 216px)
+           실제 height = 80px + 16px + 40px ( 136px)
+        */
+         width: 160px;
+         height: 80px;
+         background-color: yellow;
+         box-sizing: content-box;
+
+         border: 8px solid red;
+         padding: 20px;
+       }
+    </style>
+ </head>
+<body>
+
+    <div id="x">Hello</div>
+    <div id="x2">Hello2</div>
+    <div id="x3">Hello3</div>
+
+</body>
+
+</html>

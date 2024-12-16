@@ -1,0 +1,65 @@
+<!-- css05_box모델2_width와height_부모기준_퍼센트.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> % 이용한 상대값 적용</title>
+    <style>
+      
+      /* >1. 부모에 크기를 지정하지 않은 경우 */
+      #x{
+        border: 1px solid red;
+      }
+      #y{
+        width: 100%;
+        height: 100%;
+        background-color: yellow;
+      }
+      #z{
+        width: 50%;
+        height: 50%;
+        background-color: blue;
+      }
+      /* >2. 부모에 크기를 지정한 경우 */
+      #x2{
+        border: 1px solid red;
+         width: 400px;
+         height: 200px;
+      }
+      #y2{
+        width: 100%;
+        height: 100%;
+        background-color: yellow;
+      }
+      #z2{
+        width: 50%;
+        height: 50%;
+        background-color: blue;
+      }
+
+    </style>
+ </head>
+<body>
+
+    <h1>1. 부모에 크기를 지정하지 않은 경우</h1>
+     <div id="x">
+      <div id="y">
+        AAA
+      </div>
+      <div id="z">
+        AAA2
+      </div>
+     </div>
+
+    <h1>2. 부모에 크기를 지정한 경우</h1>
+    <div id="x2">
+      <div id="y2">
+        BBB
+      </div>
+      <div id="z2">
+        BBB2
+      </div>
+     </div>
+
+</body>
+
+</html>
