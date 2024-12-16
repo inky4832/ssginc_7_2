@@ -714,7 +714,7 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity
 
    3) z-index 속성
 
-      - position: fixed 또는 absolute 같은 경우에는 겹쳐서 보여질 수 있다.
+      - position: fixed 또는 abso수ute 같은 경우에는 겹쳐서 보여질 수 있다.
       - 요소 배치하는 방식 3가지
         
 	 x 배치: 인라인 
@@ -725,3 +725,75 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity
 
           z-index: auto|값   // 기본은 auto 이고 0 과 동일
                             // 값이 작을수로 밑에 배치된다.
+
+            양수
+             0 (auto)
+	    음수
+
+12. 배경(background) 관련
+  
+  1) 배경색
+
+    문법:
+       background-color: 색상;
+
+
+  2) 배경 이미지
+
+    문법:
+       background-image: url("경로")
+
+       background-image: url("경로1"), url("경로2")  // 경로1이 가장 위에 보임
+
+    특징
+       - x축 및 y 축으로 반복적으로 이미지가 출력됨
+       - 배경색과 같이 사용가능.
+
+    
+  3) 배경 이미지 반복 제어
+
+     문법:
+          background-repeat: repeat-x|repeat-y|repeat(기본값)|no-repeat
+
+
+   4) 배경 이미지 크기
+
+     문법:
+      
+          background-size:auto(기본값)|px|contain|cover
+
+        예>
+          backgroudn-size: 너비값  높이값;
+	  예> backgroudn-size: 30px  50px;  // width:30px  height:50px
+
+
+	  backgroudn-size: contain
+
+	  ==> 처음부터 이미지를 보여주는 컨테이너(div)에 최대한 맞춰서 보여진다.
+	     화면을 작게하면 이미지도 같이 작아지고 화면을 크게하면 이미지도 같이 커진다. 단 일정 크기만 커진다.
+	     결국 이미지를 모두 볼 수 있음.
+
+          
+	  backgroudn-size: cover
+
+	  ==> 이미지의 비율을 관리하기 때문에 처음부터 이미지 전체가 안 나올수 있음.
+	      화면을 작게하면 일정부분까지만 작아지기 때문에 화면이 잘려 보임.
+	      화면을 크게하면 비례해서 커지기 때문에 화면이 잘려 보임.
+
+
+   5) 배경 이미지 위치
+
+     문법:
+      
+          // 값 하나 지정 ( top/right/bottom/left 모두 적용 )
+          background-position: x축|y축(px|%);
+
+	  // 값 두개 지정
+	  background-position: x축(px|%)  y축(px|%);
+	  background-position: bottom 10px right 20px;;
+
+   6) 배경 이미지 scroll 여부
+
+    문법:
+
+        background-attachment: scroll(기본)|fixed
