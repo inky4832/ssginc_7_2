@@ -797,3 +797,62 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity
     문법:
 
         background-attachment: scroll(기본)|fixed
+
+
+13. 크기 단위 ( unit )
+
+   1) 단위 종류
+     
+     - px ( cm, inch )
+     - %
+     - rem ( em )
+     - vw, vh
+ 
+    2) 적용 css 속성
+
+      - width/height
+      - font-size
+      - margin/padding/border
+      - position( top/right/bottom/left )
+
+     3) 단위 종류 2가지
+
+      가. 절대 단위
+         - px 만 사용하자.
+
+
+      나. 상대 단위
+
+         a. %
+	    - 기본적으로 부모 기준
+	    - position에 따라서 기준이 달라진다.
+	      
+	        position:static   :  지정된 top,right,bottom,left 적용안됨.
+		position:relative :  지정된 top,right,bottom,left 적용됨.
+		                     기준은 static으로 지정했을 때의 기본 문서대열(document flow)이다.
+
+		position:fixed   :  지정된 top,right,bottom,left 적용됨.
+		                    기준은 웹 브라우저(뷰포트)이다.
+
+               	position:absolute   :  지정된 top,right,bottom,left 적용됨.
+		                       부모에 position:relative로 지정되었으면 기준은 부모요소이고
+				       부모에 position 지정 안되 있으면 기준은 웹 브라우저(뷰포트)이다.
+
+
+
+
+	 b. vw, vh  ( vw: viewport width,  vh: viewport height )
+            - 기준은 뷰포트 이다.
+	    
+	    예> vw, vh 사용하지 않는 경우
+
+	        <div> 
+		  <h1> <== position:fixed;  width:50%
+
+                vw, vh 사용하는 경우
+
+	        <div> 
+		  <h1> <== width:50vw;
+	  
+	 c. rem(em)
+
