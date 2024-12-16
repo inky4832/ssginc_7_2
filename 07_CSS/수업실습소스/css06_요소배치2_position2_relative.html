@@ -1,0 +1,36 @@
+<!-- css06_요소배치2_position2_relative.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> position:relative </title>
+    <style>
+      
+       body{
+        border: 2px solid blue;
+       }
+     
+       div.relative{
+          border: 2px solid red;
+          position: relative;
+          /* position:relative 는 top/right/bottom/left 적용이 됨
+             기준 위치는 기본 문서 대열이다.
+          */
+          left: 200px;
+          top: 300px;
+       }
+
+    </style>
+ </head>
+<body>
+
+     <h2>relative 실습</h2>
+     <p>  
+      - 기준은 기본적인 문서 대열이다.
+      - top,right,bottom,left 속성을 지정하면 적용이 됨</p>
+     <div class="relative">
+      기준은 기본적인 문서 대열이다.
+     </div>
+
+</body>
+
+</html>

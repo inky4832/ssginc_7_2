@@ -1,0 +1,43 @@
+<!-- css06_요소배치2_position4_absolute.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> position:absolute </title>
+    <style>
+      
+       body{
+        border: 2px solid blue;
+       }
+     
+       div.relative{
+          border: 2px solid red;
+          width: 400px;
+          height: 300px;
+          position: relative;
+       }
+       div.absolute{
+          border: 2px solid blue;
+          width: 100px;
+          height: 100px;
+          top: 40px;
+          right: 0px;
+          position:absolute;
+       }
+    </style>
+ </head>
+<body>
+     <h2>absolute 실습</h2>
+     <p>  
+        - 기준은 부모 요소
+	     - top,right,bottom,left 속성을 지정하면 적용이 됨
+         - 부모 요소와 같이 사용됨
+     </p>
+     <div class="relative">
+        <div class="absolute">
+            absolute 실습
+        </div>
+     </div>
+
+</body>
+
+</html>
