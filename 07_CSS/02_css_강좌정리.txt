@@ -15,7 +15,7 @@
 
    1)인라인 스타일 ( inline style)
      - html의 시작태그에서 style 속성을 이용해서 스타일 적용
-      예> <p style="color:red">Hello</p>
+      예> <p style="color:red; font-size:40px;">Hello</p>
 
    2)내부 스타일 ( internal style)
      - <style> 태그에서 CSS 설정하는 방법
@@ -308,6 +308,8 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity
 
           예> p:only-child {} <== p 태그의 부모를 찾고 그 부모의 유일한 자식인 p태그 참조 (o)
 
+            선택자:empty  <== 자식이 없는 태그 참조.
+
         d.  n 번째 자식, 배수 , 짝수, 홀수
 	  
 	    선택자:nth-child(n) < ==  n 번째 자식 참조,  1 부터 시작
@@ -365,7 +367,7 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity
        예> p::first-letter{}
 
     
-     다. 특정요소에 컨텐츠(문자열,image등) 삽입
+     다. 특정요소에 컨텐츠(문자열,image등) 삽입 (**************)
 
          ::after{
              content: 값|url('이미지경로')
@@ -393,14 +395,14 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity
 
      가. 블럭레벨
         - 기본적으로 웹 브라우저의 전체 너비(width)를 차지한다.
-	  따라서 다음 요소는 새로운 라인(new line)에 추가가 된다. ( 가로 배치 )
+	  따라서 다음 요소는 새로운 라인(new line)에 추가가 된다. ( 세로 배치 )
 	- 크롬 브라우저의 개발자도구(F12)에서 Box Model 그림을 보면 
 	   명시적인 width와 height 값이 보인다.  예> 248 X 21
         - width 와 height 지정하면 적용이 된다.
 
      나. 인라인 레벨
         - 기본적으로 자신의 content 크기만큼만 너비(width)를 차지한다.
-	  따라서 다음 요소는 같은 라인에 추가가 된다. ( 세로 배치 )
+	  따라서 다음 요소는 같은 라인에 추가가 된다. ( 가로 배치 )
 	- 크롬 브라우저의 개발자도구(F12)에서 Box Model 그림을 보면
 	  width와 height 값이 auto 로 보인다.예 > auto X auto
 
@@ -411,10 +413,229 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity
        - Box 모델에서의 content(내용)의 너비와 높이를 의미한다.
          지정하지 않으면 블럭레벨인 경우에는 웹브라우저의 전체 너비(width)를 차지하고
 	             인라인 레벨인 경우에는 자신의 content 크기만큼만 너비(width)를 차지한다.
+       - 블럭레벨에서만 widht와 height값이 적용된다. (********)
 
        - 문법:
-              width:절대값(px)|상대값(%,rem) <== 상대값은 부모, 
+              width:절대값(px)|상대값(%,rem(em)) <== 상대값은 부모( position 속성값에 따라서 기준이 달라짐), 
 	                                     만약에 부모가 100px 이고 자식이 50% 라고 하면 자식너비는 50px 됨
-	      height:절대값(px)|상대값(%,rem) <== 상대값은 부모 기준
+					      1rem(1em) = 16px
+	      height:절대값(px)|상대값(%,rem(em)) <== 상대값은 부모 기준( position 속성값에 따라서 기준이 달라짐),
 	                                     만약에 부모가 100px 이고 자식이 50% 라고 하면 자식너비는 50px 됨
+			                     1rem(1em) = 16px
 
+
+7. box-sizing 속성
+
+  1) 개념
+    
+    요소의 너비(width)와 높이(height)를 계산하는 방식이다.
+
+
+  2) 종류
+
+   가. content-box 
+      - 기본
+      - 지정된 width 와 height 값이 아닌
+      padding 과 border 값이 추가되어 최종적으로 box의 실제 크기가 정해지는 방식이다.
+       따라서 실제 너비와 높이는 더 커지게 된다.
+
+        최종 width = 지정 width + ( 2*padding) + (2*border)
+	최종 height = 지정 height + ( 2*padding) + (2*border)
+
+   나. border-box (********)
+    
+      - context-box와 다르게 padding과 border값을 포함하여
+        명시적으로 지정된 width와 height값으로 맞춰준다.
+
+	최종 width = 지정 width 
+	최종 height = 지정 height 
+
+      - 실제로는 다음과 같이 설정하고 사용한다.
+	*{
+           box-sizing: border-box;
+	}
+
+
+
+8. margin ( 바깥쪽 여백 )
+
+  1) 기능
+    - box와 box 사이의 여백(바깥쪽 여백) 제어.
+    - px 와 % 지정 가능
+    - 기본적으로 body 태그에 margin:8px 로 설정되어 있음.
+      따라서 다음과 같이 요소가 페이지에 바로 배치되도록 수정해서 사용한다.
+        *{
+	 margin:0px
+        }  
+
+  2) 문법
+
+    가. 개별적으로 위치 지정 
+
+       margin-top: 10px
+       margin-right: 10px
+       margin-bottom: 10px
+       margin-left: 10px
+        
+
+    나. 축약 표현
+
+      a. 개별위치 4개 모두 지정
+
+         margin:  top  right  bottom  left
+
+       예> margin: 10px   10px   10px   10px;
+
+
+     b. 개별위치 3개만 지정
+
+         margin:  top  right|left   bottom  
+
+	예> margin: 10px   10px   10px;
+
+    
+     c. 개별위치 2개만 지정
+
+         margin:  top|bottom  right|left     
+
+	예> margin: 10px  10px;
+
+
+      d. 개별위치 1개만 지정 (**********)
+
+         margin:  top|bottom|right|left     
+
+	예> margin: 10px;
+
+
+   3) margin의 상쇄
+    
+     - 인접한 box의 margin 는 서로 겹쳐질수 있는데
+       이때 하나로 합쳐서 margin이 만들어지는 것이 아니고 
+       큰 크기의 margin으로 적용된다.
+       이유는 요소간 거리가 너무 멀어지는 것을 방지한다.
+
+   4) 중앙정렬 ( 수평으로 가운데 정렬 )
+     
+      margin: auto;
+
+      반드시 블럭 레벨이면서 width 값을 가져야 적용이 된다.
+
+ 
+9. padding ( 안쪽 여백 )
+
+    1) 기능
+    - content와 border 사이의 여백(안쪽 여백) 제어.
+    - px 와 % 지정 가능
+
+    2) 문법
+
+      가. 개별적으로 위치 지정 
+
+       padding-top: 10px
+       padding-right: 10px
+       padding-bottom: 10px
+       padding-left: 10px
+        
+
+    나. 축약 표현
+
+      a. 개별위치 4개 모두 지정
+
+         padding:  top  right  bottom  left
+
+       예> padding: 10px   10px   10px   10px;
+
+
+     b. 개별위치 3개만 지정
+
+         padding:  top  right|left   bottom  
+
+	예> padding: 10px   10px   10px;
+
+    
+     c. 개별위치 2개만 지정
+
+         padding:  top|bottom  right|left     
+
+	예> padding: 10px  10px;
+
+
+      d. 개별위치 1개만 지정 (**********)
+
+         padding:  top|bottom|right|left     
+
+	예> padding: 10px;
+
+
+10. border ( 테두리 )
+
+   1) 기능
+    - margin과 padding 사이의 테두리 의미.
+    - 3가지 속성을 이용해서 스타일 지정이 가능하다.
+
+      가. width:  border 두께
+      나. style:  border 스타일 ( 실선, 점선 ,... )
+      다. color:  border 색상
+
+
+   2) 문법 - 개별적으로 지정
+
+      가. width
+         
+	  border-top-width: 5px
+	  border-right-width: 5px
+	  border-bottom-width: 5px
+	  border-left-width: 5px
+
+      나. style
+
+          border-top-style: solid|dotted|dashed;
+	  border-right-style: solid|dotted|dashed;
+	  border-bottom-style: solid|dotted|dashed;
+	  border-left-style: solid|dotted|dashed;
+
+      다. color
+
+          border-top-color: red;
+          border-right-color: red;
+          border-bottom-color: red;
+          border-left-color: red;
+
+   2) 문법2 - 개별적으로  축약 지정
+
+    가. width
+         
+	  border-width: top  right bottom left    // 4개 지정
+	  border-width: top  right|left  bottom   // 3개 지정
+          border-width: top|bottom  right|left    // 2개 지정
+	  border-width: top|bottom|right|left     // 1개 지정
+
+      나. style
+
+          border-style: top  right bottom left    // 4개 지정
+	  border-style: top  right|left  bottom   // 3개 지정
+	  border-style: top|bottom  right|left    // 2개 지정
+	  border-style: top|bottom|right|left     // 1개 지정
+
+      다. color
+
+          border-color: red;
+
+
+   2) 문법3 -  width 와 style 과 color 한꺼번에 축약 표현 (***************)
+
+    
+        border: width  style  color;
+
+     예> border: 5px  solid  yellow;
+
+
+    
+   3) border-radius 속성
+
+     - box의 border(테두리)를 둥글게 설정할 때 사용.
+     - 값이 클수로 더 많이 동글해짐.
+
+      예>   border-radius: 30px
+           border-radius:  50%;  // 원
