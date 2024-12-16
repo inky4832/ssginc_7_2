@@ -639,3 +639,89 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity
 
       예>   border-radius: 30px
            border-radius:  50%;  // 원
+
+
+11. 요소 배치
+
+  1) display 속성
+  
+     - 블럭레벨로 배치 / 인라인 레벨로 배치 / 랜더링 방지 / 인라인레벨 + width와 height 적용
+
+     - 문법:
+         display: block;   // 블럭레벨로 배치
+	 display: inline;  // 인라인 레벨로 배치
+	 display: none;    // 화면 랜더링 방지. 영역유지 안됨
+	 display: inline-block; // 인라인레벨 + width와 height 적용
+
+
+  2) position 속성
+    
+     - display  속성만 이용해서는 블럭레벨(세로배치) 및 인라인레벨(가로배치) 정도만 지정 가능함.
+     - position 속성 + top,right,bottom,left 속성을 이용해서 요소의 실제 위치를 바꿀 수 있다.
+
+     - 종류 5가지
+
+      가. position: static
+         - 기본
+	 - 기본적인 배치방법( document flow: 문서 대열 )를 따른다.
+	   블럭레벨은 세로 배치, 인라인 레벨은 가로 배치, left와 top이 8px 마진값이 적용되어 보여진다.
+          
+	 - top,right,bottom,left 속성을 지정해도 적용이 안됨.
+	  역으로 top,right,bottom,left 속성을 적용할려면 static이 아닌 다른 값(relative,absolute,fixed)을
+	  반드시 지정해야 된다.
+
+
+      나. position: relative
+         - 기준은 기본적인 문서 대열이다.
+	 - top,right,bottom,left 속성을 지정하면 적용이 됨
+
+      다. position: absolute
+         - 기준은 부모 요소
+	 - top,right,bottom,left 속성을 지정하면 적용이 됨
+         - 부모 요소와 같이 사용됨
+	  예> 
+	      <div>   <== 부모에 position 존재여부에 따라서 자식요소의 기준이 달라짐.
+	        <div> <== position:absolute
+
+           a. 부모 요소에 position:relative 가 있는 경우 (*************)
+
+	      <div>   <== position:relative
+	        <div> <== position:absolute
+
+            ==> 자식 요소 기준은 부모 요소가 된다.
+
+           b. 부모 요소에 position이 없는 경우
+
+	      <div>   <== position:static
+	        <div> <== position:absolute 
+
+           ==> 자식 요소 기준은 웹브라우저 화면 ( 뷰포트: viewport)가 된다.
+
+      라. position: fixed
+         - 기준은 웹브라우저 화면 ( 뷰포트: viewport)이다.
+	 - top,right,bottom,left 속성을 지정하면 적용이 됨
+	 - 스크롤 해도 고정됨.
+
+        
+      마. position:sticky
+       
+         - 최근에 추가된 기능. 따라서 지원 여부를 확인해야 됨. (  caniuse.com )
+	 - 평시에는 static 으로 동작되고 특정 임계값을 만나면 fixed 로 동작됨.
+
+	  예>
+	       postition:sticky;
+	       top: 40px  // top이 40px이 되면 fixed 됨.
+
+   3) z-index 속성
+
+      - position: fixed 또는 absolute 같은 경우에는 겹쳐서 보여질 수 있다.
+      - 요소 배치하는 방식 3가지
+        
+	 x 배치: 인라인 
+	 y 배치: 블럭
+	 z 배치: 깊이
+
+       - 문법:
+
+          z-index: auto|값   // 기본은 auto 이고 0 과 동일
+                            // 값이 작을수로 밑에 배치된다.
