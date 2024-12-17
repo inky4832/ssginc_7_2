@@ -1049,3 +1049,117 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity
    6) 첫글자만 대문자, 대문자 , 소문자
 
       text-transform:catalize|lowercase|uppercase
+
+
+21. Flex Box 모델
+
+   1) 개념
+   - 전통적으로 레이아웃(layout)을 만드는 방법은 position 및 top/right/bottom/left 및 float 속성을 이용했음.
+   - Flex Box 이용하면 매우 쉽게 레이아웃 및 수직 정렬 및 요소 순서(ordering) 및 동적 사이징이 가능.
+
+   2) 2가지 구성요소
+   
+     - 반드시 부모에 display:flex 지정해야 된다.
+       실행결과는 
+          a. 모든 item들이 가로(행) 배치됨.
+	  b. 명시적으로 지정된 height 제외하고 나머지는 가장 큰 height 값이 적용됨.
+	  c. 브라우저 화면을 줄이면 일정크기까지만 줄어듬.
+
+       만약에 display:inline-flex 지정하면
+          a와 b는 동일하고 브라우저 화면을 줄여도 요소 크기가 변경안됨.
+
+     -  자식만 flex item으로 동작된다. ( 자손은 제외됨 )
+     - item 배치는 가로(row,행), 세로(column,열) 가능하고
+       기본은 가로(row,행)이다.
+
+     가. flex Container
+        - display:flex;
+
+     나. flex item
+
+
+   3) Flex Box 속성
+
+     가. flex Container 에서만 사용되는 속성
+
+	  * 2가지 축
+	   주축: item 이 배치되는 방향의미
+	        기본은 row
+
+	   교차축: 주축에 수직인 방향의미
+
+        a. flex-direction 속성
+           - 가로배치(기본) 또는 세로배치 설정 ( 주축 결정 )
+	   - 문법: flex-direction:row(기본)|column|row-reverse|column-reverse
+
+	    row: 기본값,  왼---> 오
+            row-reverse: 오--> 왼
+
+            column: 위 ---> 아래
+            column-reverse: 아래 --> 위
+
+   
+        b. flex-wrap 속성
+	  
+	  - 화면크기를 줄이면 어느정도까지는 축소되고 결국에는 item이 안보이게 된다.
+	    축소되지 않고 다음줄에 보이게 설정하는 방법
+
+	  - 문법:
+
+	       flex-wrap:nowrap(기본)|wrap|wrap-reverse
+	      
+	       wrap: 상단기준 ( 아래로 wrap 됨)
+               wrap-reverse: 하단 기준 ( 위로 wrap 됨)
+
+          - 특징:
+	     wrap 되면 기존의 최대 height 가졌던 요소가
+	     원래 height로 변경됨.
+	     계속 화면을 줄이면 하나의 열로 표현된다.
+ 
+        c. flex-flow 속성
+ 
+           - flex-direction 과 flex-wrap 한꺼번에 표현
+	   - 문법:
+	         flex-flow: direction  wrap
+
+	    예>   flex-flow: row  wrap;
+
+	      
+        d.  justify-content 속성
+
+	   - 주축에 대한 정렬
+	   - 문법: 
+                   justify-content:center|flex-start|flext-end|space-around|space-between|space-evenly
+
+        e.  align-items 속성
+
+	   - 교차축에 대한 정렬
+	   - 문법:
+                  align-items:center|flex-start|flext-end|stretch(기본)|baseline
+	      
+
+	    stretch: item을 늘려서 container에 꽉 채운다.
+            center:  원래 height값을 가지고 center 정렬됨
+	    flex-start: 요소의 위 테두리에 맞춰서 정렬됨.
+	    flex-end: 요소의 아래 테두리에 맞춰서 정렬됨.
+	    baseline: 테두리가 아닌 요소의 실제 컨텐츠의 기준선에 맞춰서 정렬됨.
+
+        f.  align-content 속성
+	   - justify-content 와 align-items 합성 기능
+	   - wrap 항목에서만 적용됨.
+	  
+	   - 문법:
+	     
+               align-content: center|flex-start|flext-end|stretch(기본)|space-around|space-between|space-evenly
+
+     나. flex item 에서만 사용되는 속성
+
+
+22. Grid 모델
+
+
+
+23. media 쿼리
+
+나머지
+- 애니메이션
