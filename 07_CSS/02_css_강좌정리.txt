@@ -1021,3 +1021,31 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity
 
    - https://fonts.google.com  > filters 선택 >  language: korean , Generic Family 선택(serif, sans-serif)
     > 원하는 글꼴 선택 >  오른쪽 상단 Get font 클릭 > Get embed code 선택 >  복사해서 사용
+
+
+20. text 관련 속성
+
+  1) 색상
+     color: 값;
+
+  2) 수평 정렬     
+     text-align: center|left|right|justify(양쪽)
+
+   3) 밑줄 및 취소선 등
+     text-decoration:underline|overline|line-through(취소선)
+
+  4) 첫 라인 들여쓰기
+     text-indent: 10px;
+
+  5) 줄 간격
+    - font-size=16px 값에 비례해서 적용. 
+
+     line-height: 값
+
+    예>  line-height: 1   <== 16px
+        line-height: 2   <== 32px
+        line-height: 0.3   <== 4.8px
+
+   6) 첫글자만 대문자, 대문자 , 소문자
+
+      text-transform:catalize|lowercase|uppercase
