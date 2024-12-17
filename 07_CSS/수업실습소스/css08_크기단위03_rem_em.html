@@ -1,0 +1,45 @@
+<!-- css08_크기단위03_rem_em.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> rem ( em )</title>
+    <style>
+      
+      #x2  li{
+         font-size: 1.2em;
+      }
+      #x3  li{
+         font-size: 1.2rem;
+      }
+    </style>
+ </head>
+<body>
+     <h2>rem, em 실습</h2>
+
+     <p id="x">Hello</p>
+
+     <ul id="x2">
+      <li>AAA1(16 * 12=19.2)</li>
+      <li>AAA2</li>
+      <li>
+        <ul>
+          <li>BBB1(16 * 1.2 * 1.2=23.04)</li>
+          <li>BBB2</li>
+        </ul>
+      </li>
+     </ul>
+   
+     <ul id="x3">
+      <li>AAA1( 16 * 1.2=19.2)</li>
+      <li>AAA2</li>
+      <li>
+        <ul>
+          <li>BBB1( 16 * 1.2=19.2)</li>
+          <li>BBB2</li>
+        </ul>
+      </li>
+     </ul>
+
+</body>
+
+</html>
