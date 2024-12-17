@@ -1152,8 +1152,70 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity
 	     
                align-content: center|flex-start|flext-end|stretch(기본)|space-around|space-between|space-evenly
 
+  ////////////////////////////////////////
      나. flex item 에서만 사용되는 속성
 
+	 a. order 속성
+
+	   - 기본적으로 코드에 명시된 순서로 표현됨.
+	     order 속성 이용하면 순서를 변경할 수 있다.
+	    
+	   - 문법:
+	           order: 0;  ( 0이 기본값 )
+
+		-1     0    1
+               (앞)    기본  (뒤)
+
+         b.  align-self 속성
+
+	    - Container에서 설정된 align-items 속성(교차축 정렬)값을 재정의할 때 사용.
+	    - 문법:
+	     
+	         align-self:center|flex-start|flext-end|stretch(기본)|baseline
+ 
+    
+         c. flow-grow 속성
+	  
+	   - 화면을 크게할 때 item의 커지는 비율을 관리하는 방법.
+           - 문법:
+	      flow-grow: 0  ( 0 이 기본값)
+
+           예>  
+	       flow-grow: 1  로 지정하면 flow-grow:0 인 요소들이 모두 너비를 차지하고 
+	       나머지 영역을 flow-grow: 1 이 차지한다.
+
+
+	       flow-grow: 1 , flow-grow:3 로 지정하면 flow-grow:0 인 요소들이 모두 너비를 차지하고 
+	       나머지 영역을 flow-grow: 1 은 1/4이 차지, flow-grow:3은 3/4이 차지
+
+	 d. flow-shrink 속성
+
+            - 화면을 작게할 때 item의 작아지는 비율을 관리하는 방법.
+
+	    - 문법:
+	      flow-shrink: 1  ( 1 이 기본값)
+	      
+            - flow-shrink: 0  크기변경이 안됨.
+
+	 e. flex-basis 속성
+
+	   - item의 기본 크기 설정 용도.
+	     일반적으로 width/height 사용함.
+	     그런데 flex-basis 사용하면 width/height 덮어씀.
+
+           - 문법:
+
+	       flex-basis: auto|px|%
+
+	    - 동작방식
+
+	        주축이 row인 경우: ( width 고려 )
+                    flex-basis: auto <== width:50px 이면 flex-basis:50px 로 설정
+		    flex-basis: 100px <== width:50px 이면 flex-basis:100px 로 덮었슴
+
+		주축이 column 경우: ( height 고려 )
+	            flex-basis: auto
+		    flex-basis: 100px
 
 22. Grid 모델
 
