@@ -1,0 +1,79 @@
+<!-- css15_Grid01_Container03_grid-template-columns -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>grid 실습</title>
+<style type="text/css">
+* {
+    box-sizing: border-box;
+    font-size: 1.5rem;
+}
+
+html {
+    background: #b3b3b3;
+    padding: 5px;
+}
+
+body {
+    background: #b3b3b3;
+    padding: 5px;
+    margin: 0;
+  }
+  
+ .grid-container {
+
+     display: grid;
+
+     /* 4개의 컬럼 생성 */
+    /* grid-template-columns: 130px  140px 250px 150px; */
+      /* grid-template-columns: 25%  25% 25% 25%; */
+       /* grid-template-columns: repeat(4, 25% ); */
+       /* grid-template-columns: 25%  25% 250px 150px;  */
+       /* grid-template-columns: 25%  25% 250px auto;  */
+       grid-template-columns: 20px  1fr 250px 2fr; 
+
+
+/*  */
+
+  }
+  
+.grid-container  div{
+     height: 80px;
+ 
+}
+
+.item-1 {
+    background: red;
+ }
+
+.item-2 {
+    background: blue;
+}
+
+.item-3 {
+    background: aqua;
+}
+
+.item-4 {
+    background: #f5c096;
+}
+
+.item-5 {
+    background: yellow;
+}
+
+.item-6 {
+    background: #d3c0b1;
+}
+</style>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="item-1">item1</div>
+        <div class="item-2">item2</div>
+        <div class="item-3">item3</div>
+        <div class="item-4">item4</div>
+    </div>
+</body>
+</html>
