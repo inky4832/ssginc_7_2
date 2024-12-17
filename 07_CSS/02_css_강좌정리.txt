@@ -1214,10 +1214,62 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity
 		    flex-basis: 100px <== width:50px 이면 flex-basis:100px 로 덮었슴
 
 		주축이 column 경우: ( height 고려 )
-	            flex-basis: auto
-		    flex-basis: 100px
+	            flex-basis: auto <== height:50px 이면 flex-basis:50px 로 설정
+		    flex-basis: 100px <== height:50px 이면 flex-basis:100px 로 덮었슴
+
+
 
 22. Grid 모델
+https://developer.mozilla.org/ko/docs/Glossary/Grid
+   1) 개요
+    - FlexBox는 1차원인 행/열 만 따로따로 제어가 가능했음.
+    - Grid는 2차원인 행/열  같이 제어가 가능함.
+
+    2) 2가지 구성요소
+   
+     - 반드시 부모에 display:grid 지정해야 된다.
+       실행결과는 행으로 추가됨. ( flex box는 열로 추가됨 )
+     
+     가. Grid Container
+        - display:grid;
+
+     나. Grid item
+
+    3) Grid 속성
+
+     가. Grid Container 에서만 사용되는 속성
+
+	a. grid-auto-flow 속성
+
+	   - item 배치 
+	   - 문법:
+	          grid-auto-flow:row(기본)|column
+
+
+        b. grid-template-columns 속성
+
+	   - 열을 생성
+	   - 문법: 
+
+	       grid-template-columns: 값1   값2   값3  값4
+
+	      예> grid-template-columns: 20px   20px  20px  20px
+                 grid-template-columns: repeat(4, 20px)
+		 grid-template-columns: 20%   20%  20%  20%  ( 기준은 Container )
+                 grid-template-columns: repeat(4, 20%)
+                 grid-template-columns: 20%  30px  20%  50px 
+		 grid-template-columns: 20%  30px  20%  auto 
+		 grid-template-columns: 20px  30px  1fr  2fr  ( fr: fraction이고 나머지 여백을 비율로 계산)
+
+         c. grid-template-rows 속성
+	   
+	    - 행을 생성
+	    - 문법: 
+
+	       grid-template-rows: 값1   값2   값3 
+
+
+     나. Grid item  에서만 사용되는 속성
 
 
 
