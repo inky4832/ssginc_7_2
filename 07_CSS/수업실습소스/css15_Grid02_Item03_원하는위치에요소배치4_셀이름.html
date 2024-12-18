@@ -1,0 +1,66 @@
+<!-- css15_Grid02_Item03_원하는위치에요소배치4_셀이름 -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>grid 실습</title>
+<style type="text/css">
+
+  
+.grid-container {
+     display: grid;
+
+     /* 열 생성 */
+     grid-template-columns: repeat(4, 150px);
+     
+     /* 행 생성 */
+     grid-template-rows: 100px 100px 100px;
+
+     /* 셀 이름 지정 */
+     grid-template-areas:   "header  header   header1  header1"
+	                              ".  .   main  main"
+				            "footer1  footer2   footer3  footer4"
+  }
+.grid-container  div2{
+     height: 50px;
+}
+
+.item-1 {
+    background: red;
+    grid-area: header;
+ }
+
+.item-2 {
+    background: blue;
+    grid-area: main;
+}
+
+.item-3 {
+    background: aqua;
+    grid-area: footer1;
+}
+
+.item-4 {
+    background: #f5c096;
+    grid-area: footer4;
+}
+
+.item-5 {
+    background: yellow;
+}
+
+.item-6 {
+    background: #d3c0b1;
+}
+</style>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="item-1">item1</div>
+        <div class="item-2">item2</div>
+        <div class="item-3">item3</div>
+        <div class="item-4">item4</div>
+
+    </div>
+</body>
+</html>
