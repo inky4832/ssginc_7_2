@@ -1,0 +1,34 @@
+<!-- js02_데이터타입종류.html -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <title>JS의 데이터 타입</title>
+    <script>
+
+        // 기본형 데이터
+        console.log("수치 데이터(정수):", 10);
+        console.log("수치 데이터(실수):", 3.14);
+        console.log("문자 데이터:", '홍길동', "홍길동");
+        console.log("논리 데이터:", true,  false);
+        console.log("undefined: ", undefined);
+        console.log("null:", null);
+        console.log("NaN:", NaN);
+        
+        // 참조형 데이터
+        console.log("배열(객체):", [1,2,3,4]);
+        console.log("json(객체):", {"name":"홍길동","age":20});
+        console.log("함수(객체):", function(){});  // 익명 함수
+
+        class Cat{
+
+        }
+        console.log("클래스(객체):", new Cat());
+</script>
+ </head>
+ <body>
+    <p>홍길동</p>
+    <div>이순신</div>
+
+
+ </body>
+ </html>

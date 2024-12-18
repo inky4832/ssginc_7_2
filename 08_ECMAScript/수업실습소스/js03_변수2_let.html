@@ -1,0 +1,41 @@
+<!-- js03_변수2_let.html -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <title>let 변수</title>
+    <script>
+
+        //변수 선언
+        let n;
+         //변수 초기화
+         n = 10;
+         n = true;
+
+         //변수명 중복여부
+        console.log("let:", n);
+
+         //변수명 중복여부(불가)
+         //let n = 100;
+        // console.log("let:", n);
+
+        // 블럭 스코프를 따른다.
+        if(true){
+            let n2 =200;
+        }
+        //console.log("if 밖:", n2); // n2 is not defined
+
+        function fun(){
+            let n3 = 300;
+        }
+        fun();
+        // console.log("함수밖:", n3); // n3 is not defined
+
+    </script>
+ </head>
+ <body>
+    <p>홍길동</p>
+    <div>이순신</div>
+
+
+ </body>
+ </html>

@@ -1,0 +1,40 @@
+<!-- js03_변수1_var.html -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <title>var 변수</title>
+    <script>
+
+        //변수 선언
+        var n;
+        //변수 초기화
+        n = 10;
+        n = true;
+        console.log("var:", n);
+        
+        //변수명 중복여부(가능)
+        var n = 100;
+        console.log("var:", n);
+        
+        // 함수 스코프를 따른다.
+        if(true){
+            var n2 =200;
+        }
+        console.log("if 밖:", n2);
+        
+        function fun(){
+            var n3 = 300;
+        }
+        fun();
+        //console.log("함수밖:", n3); // n3 is not defined
+        
+
+     </script>
+ </head>
+ <body>
+    <p>홍길동</p>
+    <div>이순신</div>
+
+
+ </body>
+ </html>

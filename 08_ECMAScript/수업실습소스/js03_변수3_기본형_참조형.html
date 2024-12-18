@@ -1,0 +1,36 @@
+<!-- js03_변수3_기본형_참조형.html -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <title>let 변수</title>
+    <script>
+
+    // 기본형 변수
+
+    function fun(x){
+        x = 20; // 전달값 변경
+    }
+    let n = 10;
+    console.log("변경전: ", n)  // 10
+    fun(n);
+    console.log("변경후: ", n)  // 10
+    
+    // 참조형 변수
+    function fun2(x){
+        x[0]=100;
+    }
+    let n2 = [10,20,30];
+    console.log("변경전: ", n2) // [10, 20, 30]
+    fun2(n2);
+    console.log("변경후: ", n2) // [100, 20, 30]
+
+
+    </script>
+ </head>
+ <body>
+    <p>홍길동</p>
+    <div>이순신</div>
+
+
+ </body>
+ </html>
