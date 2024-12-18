@@ -1257,7 +1257,7 @@ https://developer.mozilla.org/ko/docs/Glossary/Grid
                  grid-template-columns: repeat(4, 20px)
 		 grid-template-columns: 20%   20%  20%  20%  ( 기준은 Container )
                  grid-template-columns: repeat(4, 20%)
-                 grid-template-columns: 20%  30px  20%  50px 
+                 grid-template-columns: 20%  30px  1rem  50px 
 		 grid-template-columns: 20%  30px  20%  auto 
 		 grid-template-columns: 20px  30px  1fr  2fr  ( fr: fraction이고 나머지 여백을 비율로 계산)
 
@@ -1268,12 +1268,121 @@ https://developer.mozilla.org/ko/docs/Glossary/Grid
 
 	       grid-template-rows: 값1   값2   값3 
 
+	 d. item 간 gap 지정
+           
+	     grid-row-gap 과 grid-column-gap 는 deprecated 됨
+	     축약 표현식은 grid-gap: row column 는 deprecated 됨
+ 
+	    가. 행 간격(gap)
+
+               row-gap: 10px    
+	
+	    나. 열 간격(gap)	   
+ 
+               column-gap: 5px 
+
+            축약 표현식:  gap: row column
+
+ 
+        e. 정렬
+
+	   가. 셀안에서의 item 정렬
+	       
+	       - x축 정렬: justify-items:center|flex-start|..
+
+	       - y축 정렬: align-items:center|flex-start|..
+
+
+	   나. container 정렬
+
+	        - x축 정렬
+		   justify-content:center|flex-start|..
+
+	       - y축 정렬
+
+                   align-content:center|flex-start|..
+
+
 
      나. Grid item  에서만 사용되는 속성
 
+       a. 셀안에서의 item 정렬 ( justify-items 와 align-items ) 재정의
+
+           justify-self:center|flex-start|..
+	   align-self: center|flex-start|..
+	       
+
+       b.  item을 원하는 위치에 배치 - 위치의 번호 이용
+
+            grid-column-start: 값(번호)
+            grid-column-end: 값(번호)
+
+	  축약표현식: grid-column: 시작값(번호)/값(번호)
+
+            grid-row-start: 값(번호)
+            grid-row-end: 값(번호)
+
+	  축약표현식: grid-row: 시작값(번호)/값(번호)
+
+      c.  item을 원하는 위치에 배치 - 갯수 이용
+
+            grid-column-start: 값(번호)
+            grid-column-end: span n(갯수)
+
+	  축약표현식: grid-column: 시작값/span n
+
+            grid-row-start: 값(번호)
+            grid-row-end: span n(갯수)
+
+	  축약표현식: grid-row: 시작값/span n(갯수)
+
+       d.  item을 원하는 위치에 배치 - 셀 이름 이용
+
+	    container{
+
+	       grid-template-areas:   "header  header   header1  header1"
+	                              ".  .   main  main"
+				      "footer1  footer2   footer3  footer4"
+	    }
+
+	    item1{
+
+	        grid-area:header1
+	    }
+	     item2{
+
+	        grid-area:footer2
+	    }
 
 
 23. media 쿼리
 
-나머지
-- 애니메이션
+  1) 개념
+   - 반응형 웹을 구축할 때 사용하는 방법
+
+    * 반응형 웹
+     - 현재 대부분이 모바일 기기를 사용하니까
+      개발자는 하나의 웹 페이지를 일반 PC에서도 잘 보여주고 
+      모바일 기기에서도 잘 보여질 수 있도록 구축해야 된다.
+
+      방법1: device마다 html를 따로 만듬.
+      방법2: 하나의 html를 만들어서 화면 크기에 따라서 레이아웃을 변경시키는 방법.
+           이것이 반응형 웹이고 media 쿼리를 이용해서 구축할 수 있다.
+
+
+    - 문법:
+
+        @media  screen and ( max-width: 500px ){  // 화면이 500px 보다 같거나 작으면
+            선택자{
+              color:red;
+	    }
+	    선택자{
+              속성:값
+	    }
+	}
+
+	@media  screen and ( max-width: 500px ) and ( orientation:landscape|portrait ){
+
+	}
+
+
