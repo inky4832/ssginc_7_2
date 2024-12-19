@@ -1,0 +1,42 @@
+<!-- js05_연산자3_비교연산자.html -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <title>비교 연산자</title>
+    <script>
+
+       let n = 10;
+       let n2 = 5;
+       
+       console.log(n == n2);
+       console.log(n != n2);
+       console.log(n > n2);
+       console.log(n >= n2);
+       console.log(n < n2);
+       console.log(n <= n2);
+     
+       console.log("###########################")
+       // ==  vs  ===
+       console.log("equal 연산자:", ("10" == 10) );  // true
+       console.log("identicla 연산자(권장):", ("10" === 10) ); // false
+       
+       console.log("###########################")
+
+       let x = undefined;
+       console.log( x == undefined ); // true
+       console.log( x === undefined ); // true
+
+       let x2 = null;
+       console.log( x2 == undefined ); // true
+       console.log( x2 === undefined ); // false
+
+
+    </script>
+ </head>
+ <body>
+    <p>홍길동</p>
+    <div>이순신</div>
+
+
+ </body>
+ </html>

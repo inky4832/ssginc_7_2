@@ -1,0 +1,50 @@
+<!-- js06_문장2_반복문.html -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <title>반복문</title>
+    <script>
+
+       // 일반 for문
+       for(let n=1; n < 6  ; n++ ){
+         console.log("hello",n);
+      }
+      console.log("###########################");
+     
+      // while 문
+      let n2 = 1;
+      while(n2 < 6){
+         console.log("hello2",n2);
+         n2++;
+      }
+      console.log("###########################");
+      
+      // do~while문
+      let n3= 1;
+      do{
+         console.log("hello3",n3);
+         n3++;
+      }while(n3 < 6);
+      
+      
+      console.log("###########################");
+
+      // break, continue
+
+      for(let n=1; n < 6  ; n++ ){
+         // if(n==3)break;
+          if(n==3)continue;
+         console.log("hello4",n);
+      }
+
+
+    </script>
+    
+ </head>
+ <body>
+    <p>홍길동</p>
+    <div>이순신</div>
+
+
+ </body>
+ </html>

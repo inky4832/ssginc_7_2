@@ -1,0 +1,61 @@
+<!-- js07_객체1_데이터관련1_String.html -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <title>문자열 객체</title>
+    <script>
+
+       // 1. 문자열 생성 방법
+
+       let s = "hello"; // 권장
+       let s2 = String("hello");
+       let s3 = new String("hello");
+       console.log(s);
+       console.log(s2);
+       console.log(s3);
+       
+       //2. 문자열 표현식 3가지
+       let x = 'hello';  // 홑따옴표
+       let x2 = "hello"; // 쌍따옴표
+       let x3 = `hello`;  // 백틱(back-tick, template literal), 중요
+       console.log(x);
+       console.log(x2);
+       console.log(x3);
+
+      // 백틱(back-tick) 특징 2가지
+      // 가. 변수를 삽입 가능: `${변수명}` 이용
+      
+      var name ="홍길동";
+      var age = 20;
+      // 출력포맷:  이름:홍길동, 나이:20
+      var result = "이름:"+ name +", 나이:"+age;
+      console.log(result);
+      
+      var result = `이름2:${name}, 나이2:${age} `;
+      console.log(result);
+      
+      // 나.  html 태그의 포맷을 유지가 가능
+      var table = "<tabel><tr><td>"+name+"</td></tr></table>";
+      console.log(table);
+      
+      var table = `
+            <table>
+              <tr>
+                <td>${name}</td>
+               </tr>
+            </table>
+            `;
+      console.log(table);
+
+         
+
+    </script>
+    
+ </head>
+ <body>
+    <p>홍길동</p>
+    <div>이순신</div>
+
+
+ </body>
+ </html>
