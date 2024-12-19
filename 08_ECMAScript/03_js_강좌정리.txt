@@ -367,8 +367,12 @@ JS 강좌정리
 
    1) 데이터 관련 객체
      - 문자열 객체 ( String ): String객체생성방법, 메서드 종류
-     - 수치 객체 ( Number )
-     - 날짜 객체 ( Date )
+     - 수치 객체 ( Number ) : Number객체생성방법, 메서드 종류
+     - 날짜 객체 ( Date )  : Date객체생성방법, 메서드 종류
+     - 불린 객체 ( Boolean ): Boolean객체생성방법, 메서드 종류
+       ==> 값이 없거나 0, -0, null, false, NaN, undefined, 빈 문자열 ("")이라면 객체의 초기값은 false가 됩니다.
+           이외의 값은 true로 된다.
+
      - 배열 객체 ( Array )
      - JSON 객체
      - Object 객체
