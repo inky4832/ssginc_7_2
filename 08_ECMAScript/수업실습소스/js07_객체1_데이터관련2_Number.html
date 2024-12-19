@@ -1,0 +1,64 @@
+<!-- js07_객체1_데이터관련2_Number.html -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <title>수치 데이터 객체 메서드</title>
+    <script>
+
+      // 수치 데이터 생성 방법
+      let n = 100;  // 권장
+      let n2 = Number(100);
+      let n3 = new Number(100);
+
+      console.log(n);
+      console.log(n2);
+      console.log(n3);
+
+      // 속성 및 메서드
+      console.log("1. 최대값: ", Number.MAX_VALUE); // 1.7976931348623157e+308
+      console.log("2. 최소값: ", Number.MIN_VALUE); // 5e-324
+      
+      let n4= 10;
+      console.log("3. 문자열로 변경(10진수): ", n4.toString());  // 10진수 문자열, 10
+      console.log("3. 문자열로 변경(2진수): ", n4.toString(2));  // 2진수 문자열,  1010
+      console.log("3. 문자열로 변경(8진수): ", n4.toString(8));  // 8진수 문자열,  12
+      console.log("3. 문자열로 변경(16진수): ", n4.toString(16));  // 16진수 문자열, A
+      
+      let n5 = 3.14567;
+      console.log("4. 문자열로 소수점 표현(소수점0자리,정수): ", n5.toFixed());  // 3 
+      console.log("4. 문자열로 소수점 표현(소수점2자리): ", n5.toFixed(2));  // 3.15 ( 반올림 )
+      console.log("4. 문자열로 소수점 표현(소수점4자리): ", n5.toFixed(4));  // 3.1457 ( 반올림 )
+      
+      // 정적 메서드( static method )
+      console.log("5. NaN 이냐: ", Number.isNaN(NaN));  
+      console.log("5. NaN 이냐: ", Number.isNaN(null));  
+      console.log("5. NaN 이냐: ", Number.isNaN(undefined));  
+      console.log("5. NaN 이냐: ", Number.isNaN("홍길동"));  
+      console.log("5. NaN 이냐: ", Number.isNaN(10));  
+      console.log("##################################")
+
+      console.log("6. 정수 냐: ", Number.isInteger(10));  
+      console.log("6. 정수 냐: ", Number.isInteger(-10));  
+      console.log("6. 정수 냐: ", Number.isInteger(3.15));  
+      console.log("6. 정수 냐: ", Number.isInteger(-3.15));  
+      console.log("6. 정수 냐: ", Number.isInteger(NaN));  
+      console.log("6. 정수 냐: ", Number.isInteger(null));  
+      console.log("6. 정수 냐: ", Number.isInteger(undefined));  
+      
+      // "10"--> 10
+      console.log("7. 문자열을 정수로 변환 ", Number.parseInt("10") + 10);  
+
+      // "3.14"-> 3.14
+      console.log("8. 문자열을 실수로 변환 ", Number.parseFloat("3.14") + 10);  
+
+       
+    </script>
+    
+ </head>
+ <body>
+    <p>홍길동</p>
+    <div>이순신</div>
+
+
+ </body>
+ </html>

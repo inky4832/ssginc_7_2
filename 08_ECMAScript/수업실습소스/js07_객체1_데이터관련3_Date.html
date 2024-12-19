@@ -1,0 +1,51 @@
+<!-- js07_객체1_데이터관련3_Date.html -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <title>날짜 데이터 객체 메서드</title>
+    <script>
+
+      // 날짜 데이터 생성 방법
+     
+      let d = new Date(); // 권장
+      let d2 = Date();
+      let d3 = Date.now();
+
+      console.log(d);  // 객체로 반환, Thu Dec 19 2024 14:18:02 GMT+0900 (한국 표준시)
+      console.log(d2); // 문자열로 반환, Thu Dec 19 2024 14:18:02 GMT+0900 (한국 표준시)
+      console.log(d3); // 1970/0101/00:00:00 ~  현재까지 시간을 밀리세컨즈로 반환, 1734585482220
+      
+      console.log("1. toString(): ", d.toString()); // Thu Dec 19 2024 14:22:01 GMT+0900 (한국 표준시)
+      console.log("2. toDateString(): ", d.toDateString()); // Thu Dec 19 2024
+      console.log("3. toISOString(): ", d.toISOString()); // 2024-12-19T05:22:23.459Z
+      console.log("3. toISOString().slice(start,end): ", d.toISOString().slice(0, 10)); // 2024-12-19
+      
+      
+      console.log("4. 년도: ", d.getFullYear());  
+      console.log("5. 월: ", d.getMonth() + 1);  
+      console.log("6. 일: ", d.getDate());  
+      console.log("7. 시: ", d.getHours());  
+      console.log("8. 분: ", d.getMinutes());  
+      console.log("9. 초: ", d.getSeconds());
+
+      console.log("10. 요일(0~6): ", d.getDay());  // 일요일: 0
+      
+      // 특정 날짜 설정
+      let d4 = new Date();
+      d4.setFullYear(2022);
+      d4.setMonth(7);
+      d4.setDate(23);
+      
+      console.log("11. 특정 날짜 설정: ", d4.toISOString());  
+
+
+      </script>
+    
+ </head>
+ <body>
+    <p>홍길동</p>
+    <div>이순신</div>
+
+
+ </body>
+ </html>

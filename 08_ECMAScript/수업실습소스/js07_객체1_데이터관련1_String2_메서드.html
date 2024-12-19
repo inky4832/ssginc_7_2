@@ -7,9 +7,58 @@
 
        let s = "HeLLo"; 
 
+       console.log("1. 문자열 길이:", s.length );
+
+       console.log("2. 특정 문자 얻기:", s.charAt(0) );
        
-     
-         
+       console.log("3. 문자열 연결:", s.concat(" !!!") );
+       console.log("3. 문자열 연결:", s.concat(" !!!", "~~~") );
+       
+       console.log("4. 특정 문자 위치 얻기:", s.indexOf('H') );   // 0부터 찾기
+       console.log("4. 특정 문자 위치 얻기:", s.indexOf('H', 2) ); // 2부터 찾기
+       console.log("4. 특정 문자 위치 얻기:", s.indexOf('a') );  // 없으면 -1
+       
+       console.log("5. 부분열:", s.substring(0,4) );  // start, end
+       console.log("5. 부분열:", s.substr(0,4) );  // start, len
+       
+       console.log("6. 대문자:", s.toUpperCase() );  
+       console.log("7. 소문자:", s.toLowerCase() );  
+       
+       console.log("8. 특정값 시작여부:", s.startsWith("H"));  
+       console.log("9. 특정값 종료여부:", s.endsWith("o"));     // 전체 문자열 대상
+       console.log("9. 특정값 종료여부:", s.endsWith("o", 4));  // len 만큼 대상
+
+       console.log("10. 특정값 포함 여부:", s.includes("e")); // 0부터 시작 
+       console.log("10. 특정값 포함 여부:", s.includes("e", 3));  // 3부터 시작
+      
+       console.log("11. 치환:", s.replace('L','l'));  // 맨 처음 일치하는 값만 바뀜.
+       console.log("11. 치환-ALL:", s.replaceAll('L','l'));  // 모든 일치하는 값 바뀜.
+       
+       let s2 = "     world     ";
+       console.log("12. 공백제거(양쪽):", s2.trim());  
+       console.log("12. 공백제거(왼쪽):", s2.trimStart());  
+       console.log("12. 공백제거(오른쪽):", s2.trimEnd());  
+
+       console.log("12. 공백제거후 길이:", s2.trim().length);  
+       
+       let s3 ="홍길동/이순신/유관순";
+       let result_arr = s3.split("/");
+       console.log("13. 구분자로 분리: ", result_arr, result_arr[0]);
+       
+       let s4 = "hello";
+       console.log("14. 문자열 반복:", s4.repeat(3));
+       
+       let s5="홍길동"
+       console.log("15. LPAD:", s5.padStart(10, "*")); // *******홍길동
+       console.log("16. RPAD:", s5.padEnd(10, "*"));   // 홍길동*******
+
+       
+      // 이스케이프
+      console.log("aaa\"bbb");
+      console.log("aaa\'bbb");
+      console.log("aaa\tbbb");
+      console.log("aaa\nbbb");
+      console.log("aaa\\nbbb");
 
     </script>
     
