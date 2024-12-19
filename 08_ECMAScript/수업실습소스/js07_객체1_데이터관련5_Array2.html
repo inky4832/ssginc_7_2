@@ -1,0 +1,91 @@
+<!-- js07_객체1_데이터관련5_Array2.html -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <title>Array 데이터 객체 메서드</title>
+    <script>
+
+         // 배열에 값추가/삭제/수정/삽입
+
+         let x = [10,20,30,40];
+
+         console.log("1. 값추가( 직접 idx 지정)");
+         x[4]=50;
+         console.log("2. 값추가(  push 메서드)"); // 권장
+         x.push(90);
+         let cnt = x.push(30,50,13);  // 최종적으로 추가된 배열 길이 반환
+         console.log(x, cnt);  // [10, 20, 30, 40, 50, 90, 30, 50, 13] 9
+         
+         console.log("2. 값 수정");
+         x[1]=200;
+         console.log(x, cnt);  // [10, 200, 30, 40, 50, 90, 30, 50, 13] 9
+         
+         console.log("3. 값 삭제(마지막 값)");
+         x.pop();
+         let del_value = x.pop();  // 삭제된 값 반환
+         console.log(x, del_value);  // [10, 200, 30, 40, 50, 90, 30] 50
+
+         console.log("4. 값 삭제 및 삽입(특정 값)");
+         // array.splice(start[, deleteCount[, item1[, item2[, ...]]]])
+         // x.splice(0,0,100,200); // 0번째 위치에서 0개를 삭제하고 100과 200 삽입
+         // x.splice(0,4); // 0번째 위치에서 4개를 삭제
+         // x.splice(0,1,100,200); // 0번째 위치에서 1개를 삭제하고 100과 200 삽입
+         let x2 = [10,20,30];
+         x2.splice(1,0,100,200); // 삽입만
+         console.log(x2);  // [10, 100, 200, 20, 30]
+         x2.splice(0,2);        // 삭제만
+         console.log(x2);  // [200, 20, 30]
+         x2.splice(1,1,9,8,7);        // 삽입과 삭제 모두
+         console.log(x2);  // [200, 9, 8, 7, 30]
+         
+         console.log("5. 특정 위치값 반환");
+         const beasts = ['ant', 'bison', 'camel', 'duck', 'bison'];
+         console.log(beasts.indexOf('bison'));  // 1
+         console.log(beasts.indexOf('bison', 2));  // 시작위치가 2, 4
+         console.log(beasts.indexOf('giraffe')); // -1
+         
+         console.log("6. 부분열");
+         console.log(beasts.slice(0,4));  // ['ant', 'bison', 'camel', 'duck']
+         
+         console.log("7. 거꾸로");
+         console.log(beasts.reverse());  // ['bison', 'duck', 'camel', 'bison', 'ant']
+         
+         console.log("8. 정렬");
+         // 한자릿 수인경우
+         let x3 = [9,2,1,5,3];
+         x3.sort(); // 기본인 오름차순
+         console.log("오름차순: "+ x3);
+         
+         x3.sort(function(n, n2){
+            // return n-n2; // 오름차순
+            return -(n-n2); // 내림차순
+         });
+         console.log("내림차순: "+ x3);
+
+         // 두 자릿수 이상인 경우 ( 반드시 함수 구현할 것)
+         let x4 = [54,246,8,1,99];
+         // x4.sort(); // 기본인 오름차순, 결과: 1,246,54,8,99 임. 정렬 안된 상태.
+         x4.sort(function(n, n2){
+            return n-n2; // 오름차순
+            // return -(n-n2); // 내림차순
+         }); 
+         console.log("오름차순: "+ x4);  // 1,8,54,99,246
+
+         
+
+         
+
+
+
+
+
+      </script>
+    
+ </head>
+ <body>
+    <p>홍길동</p>
+    <div>이순신</div>
+
+
+ </body>
+ </html>

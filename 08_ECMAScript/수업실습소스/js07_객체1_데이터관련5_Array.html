@@ -1,0 +1,81 @@
+<!-- js07_객체1_데이터관련5_Array.html -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <title>Array 데이터 객체 메서드</title>
+    <script>
+
+       // Array 생성 방법
+    
+       let arr = [10,20,30];  // 권장
+       let arr2 = [];         // 권장
+
+       let arr3 = new Array(10,20,30);
+       let arr4 = new Array();
+
+       let arr5 =  Array(10,20,30);
+       let arr6 =  Array();
+
+       console.log(arr);
+       console.log(arr2);
+       console.log(arr3);
+       console.log(arr4);
+       console.log(arr5);
+       console.log(arr6);
+
+
+       // 값 조회
+       let x = [10,20,30];
+
+       console.log("1. 직접 idx 이용: " ,  x[0], x[1]);
+       
+       console.log("2. 일반 for 문 " );
+       for(var i=0; i < x.length; i++){
+         console.log(x[i]);
+      }
+      
+      console.log("3. 일반 foreach 문 " );
+       for(var n of x){  // of 는 값을 반복
+          console.log(n);
+       }
+       for(var n in x){  // in은 index 반복
+          console.log(n, x[n]);
+       }
+       /*
+          자바의 foreach 문
+          for( 변수: 배열){
+          }
+
+       */
+
+       console.log("4. 배열 foreach 문 " );
+
+       // 이름있는 함수
+       function fun(x){
+          console.log("fun", x);
+       }
+       fun(100);
+
+       // 이름없는 함수
+       let fun2 =  function (x){
+            console.log("fun2", x);
+          };
+       fun2(200);
+
+       x.forEach(function (ele, idx, arr){
+            console.log(ele, idx, arr);  // 배열요소, 인덱스, 배열자체
+          });
+
+
+
+
+      </script>
+    
+ </head>
+ <body>
+    <p>홍길동</p>
+    <div>이순신</div>
+
+
+ </body>
+ </html>
