@@ -1,0 +1,50 @@
+<!-- js07_객체1_데이터관련6_JSON.html -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <title>JSON</title>
+    <script>
+
+     // JSON 생성
+     let person = {
+       // 속성 (property)
+         name:"홍길동",
+         age:20,
+         email:["a@naver.com","a@google.com"],
+         phone:{
+            mobile:"010",
+            tel:"051"
+         },
+         // 메서드(method, 객체안의 함수의미 )
+         setName:function(n){ this.name=n;},
+         getName:function(){return this.name;}
+     };
+     // 함수
+     function aa(){}
+
+     person.setName("이순신");
+
+     //접근 방법 2가지
+     // 가. .(dot)
+     console.log(person.name, person.age, person.email, person.phone, person.getName());
+     
+     // 나. ["property의 key"] (연관 배열)
+     console.log(person["name"], person["age"], person["email"], person["phone"]);
+     // 연관배열의 특징은 변수로 사용 가능
+     let xxx  = "name";
+     let xxx2  = "age";
+     console.log(person[xxx], person[xxx2]);
+
+
+
+
+   </script>
+    
+ </head>
+ <body>
+    <p>홍길동</p>
+    <div>이순신</div>
+
+
+ </body>
+ </html>

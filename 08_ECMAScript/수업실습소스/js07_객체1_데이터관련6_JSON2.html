@@ -1,0 +1,43 @@
+<!-- js07_객체1_데이터관련6_JSON.html -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <title>JSON</title>
+    <script>
+
+     // JSON 생성
+     let name = "홍길동";
+     let age = 20;
+     let email2 = ["a@naver.com","a@google.com"];
+     let phone = {
+            mobile:"010",
+            tel:"051"
+         };
+     let person = {
+       // 속성 (property)
+         name,  //name:name,
+         age,   // age:age,
+         email: email2,
+         phone, // phone:phone,
+
+         // 메서드(method, 객체안의 함수의미 )
+        //  setName:function(n){ this.name=n;},
+         setName(n){this.name = n;},  // 자바의 메서드처럼 사용 가능
+        //  getName:function(){return this.name;}
+         getName(){return this.name;}
+     };
+     person.setName("이순신");
+     console.log(person.name, person.age, person.email, person.phone, person.getName());
+
+
+
+   </script>
+    
+ </head>
+ <body>
+    <p>홍길동</p>
+    <div>이순신</div>
+
+
+ </body>
+ </html>

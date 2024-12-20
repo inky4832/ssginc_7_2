@@ -1,0 +1,43 @@
+<!-- js07_객체1_데이터관련6_JSON.html -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <title>JSON</title>
+    <script>
+
+    // JSON(중괄호, 배열) ---> 문자열
+      let json1 = [10,20];
+      // let json2 = {"name":"홍길동","age":20};
+      let json2 = {name:"홍길동",age:20};
+
+      let str1 = JSON.stringify(json1);
+      let str2 = JSON.stringify(json2);
+      console.log(json1, str1);
+      console.log(json2, str2);
+
+
+     // 문자열 ---------> JSON
+     let str3 = "[100,200]";
+     let str4 = '{"name":"홍길동","age":20}';   // 가능
+    //  let str5 = "{'name':'홍길동','age':20}"; // 에러
+    //  let str5 = "{name:'홍길동',age:20}";     // 에러
+     
+     let json3 = JSON.parse(str3);
+     let json4 = JSON.parse(str4);
+     let json5 = JSON.parse(str5);
+     console.log(str3, json3);
+     console.log(str4, json4);
+     
+
+
+
+   </script>
+    
+ </head>
+ <body>
+    <p>홍길동</p>
+    <div>이순신</div>
+
+
+ </body>
+ </html>

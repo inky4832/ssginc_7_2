@@ -1,0 +1,45 @@
+<!-- js07_객체1_데이터관련6_JSON.html -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <title>JSON</title>
+    <script>
+
+     // JSON 생성
+     let name = "홍길동";
+     let xxx = "age";
+     let yyy = "address";
+     let person = {
+       // 속성 (property)
+         name, //name:name,
+         [xxx]:20,
+        //  address1:"서울",
+        //  address2:"부산",
+         [yyy+"1"]:"서울",
+         [yyy+"2"]:"부산",
+         email:["a@naver.com","a@google.com"],
+         phone:{
+            mobile:"010",
+            tel:"051"
+         },
+         // 메서드(method, 객체안의 함수의미 )
+         setName(n){ this.name=n;},
+         getName(){return this.name;}
+     };
+     console.log(person);
+     console.log(person.name, person.age, person.email, person.phone.mobile, person.phone.tel);
+   
+
+
+
+
+   </script>
+    
+ </head>
+ <body>
+    <p>홍길동</p>
+    <div>이순신</div>
+
+
+ </body>
+ </html>

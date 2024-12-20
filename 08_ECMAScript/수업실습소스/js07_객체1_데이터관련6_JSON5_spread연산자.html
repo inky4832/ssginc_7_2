@@ -1,0 +1,37 @@
+<!-- js07_객체1_데이터관련6_JSON5_spread연산자.html -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <title>JSON</title>
+    <script>
+
+      // spread 연산자
+
+      //1. JSON 복사
+      let x = {name:"홍길동",age:20};
+      let copy_x = {...x};
+      console.log(x, copy_x);
+      
+      //2. 기존 JSON에 값 추가 (병합)
+      let x2 = {name:"홍길동",age:20};
+      let add_json = {address:"부산"};
+      let new_json = {...x2, ...add_json}
+      console.log(x2, add_json, new_json);
+      
+      //3. 수정
+      let x3 = {name:"홍길동",age:20, address:"부산"};
+      let update_json = {name:"이순신",age:40};
+      let new_json2 = {...x3, ...update_json}
+      console.log(x3, update_json, new_json2);
+
+
+   </script>
+    
+ </head>
+ <body>
+    <p>홍길동</p>
+    <div>이순신</div>
+
+
+ </body>
+ </html>
