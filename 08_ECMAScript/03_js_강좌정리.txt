@@ -404,19 +404,117 @@ JS 강좌정리
 			 ..
 	           }
 
+		 JSON--> 문자열
+		   JSON.stringify(json);
+
+		 문자열--> JSON
+		   JSON.parse(str);
+
+		 
+		spread 연산자 (***********************) 
+
+	           문법:  let x = {...json};
+                     //1. JSON 복사
+		      let x = {name:"홍길동",age:20};
+		      let copy_x = {...x};
+		      console.log(x, copy_x);
+		      
+		      //2. 기존 JSON에 값 추가 (병합)
+		      let x2 = {name:"홍길동",age:20};
+		      let add_json = {address:"부산"};
+		      let new_json = {...x2, ...add_json}
+		      console.log(x2, add_json, new_json);
+		      
+		      //3. 수정
+		      let x3 = {name:"홍길동",age:20, address:"부산"};
+		      let update_json = {name:"이순신",age:40};
+		      let new_json2 = {...x3, ...update_json}
+		      console.log(x3, update_json, new_json2);
 
 
      - Object 객체
+	
+	  Object.keys(json) <=== JSON의 key값을 배열로 반환.
+	  Object.values(json) <=== JSON의 value값을 배열로 반환.
+          Object.entries(json) <==== [key, value]쌍으로 반환
+
 
    2) 웹브라우저 관련 객체 ( Browser Object Model: BOM )
-     - Window 객체
-     - Screen 객체
-     - Navigator 객체
-     - History 객체
-     - Location 객체
+     - Window 객체 : 웹 브라우저의 창(윈도우)을 관리하는 객체. ( 전역객체 )
+       https://developer.mozilla.org/ko/docs/Web/API/Window
+     - Screen 객체 : 웹 브라우저의 화면(너비,높이)을 관리하는 객체.
+       https://developer.mozilla.org/en-US/docs/Web/API/Screen
+     - Navigator 객체: 웹 브라우저을 관리하는 객체.
+     https://developer.mozilla.org/ko/docs/Web/API/Navigator
+     - History 객체 : 웹 브라우저의 뒤로/앞으로 관리하는 객체.
+     https://developer.mozilla.org/ko/docs/Web/API/History
+     - Location 객체: 웹 브라우저의 URL 항목을 관리하는 객체.
+     https://developer.mozilla.org/ko/docs/Web/API/Location
+
+
+     ==> 특징: 웹 브라우저를 open하면 5개의 BOM 객체가 자동으로 생성이 된다.
+        
+	    예>  let window =  new Window();
+	        let screen =  new Screen();
+	        let navigator =  new Navigator();
+	        let history =  new History();
+	        let location =  new Location();
+	        
+             screen, navigator, history, location 는 Window 객체의 속성으로 되어 있음.
+	     따라서 원래는 window.screen, window.navigator, window.histroy, window.location 써야 되는데
+	       Window객체는 전역객체이기 때문에 window 속성을 생략할 수 있다.
+	     
 
    3) html문서 관련 객체 ( Document Object Model: DOM )
-     - Document 객체
+     - Document 객체 ( html 문서를 관리하는 객체 )
+
+     특징: 웹 브라우저에서 html문서를 랜더링하면 자동으로 Document 객체가 자동 생성된다.
+
+      예>   var document = new Document();
+
+          document 는    Window 객체의 속성으로 되어 있음.
+         따라서 원래는 window.document 써야 되는데
+	       Window객체는 전역객체이기 때문에 window 속성을 생략할 수 있다.
+
+
+ 12.  함수 ( function )
+
+  1)역할
+    - 기능 처리 ( 자바의 메서드 역할 담당 )
+    - JSON객체 또는 클래스안에서 함수가 정의되면 메서드(method)라고 부른다.
+  
+  2)함수 작성 방법 2가지
+
+   가. 함수 선언식 ( 이름있는 함수)
+
+     문법:
+           함수명();
+           function 함수명([변수,...]){
+		문장;
+		[return 값;]
+	   }
+	   함수명();
+
+	특징: JS 실행전에 생성된다.
+	     따라서 함수정의전에 호출이 가능하다.
+
+   나. 함수 표현식 ( 이름없는 함수 )
+
+     문법:
+      
+	   변수명(); // 불가
+           변수명 = function([변수,...] ){
+	         문장;
+		[return 값;]
+	   };
+           변수명();
+
+         변수명이 함수명 대신 사용된다.
+
+         특징: JS 실행할때 생성된다.
+             따라서 반드시 함수 정의 후에 호출이 가능하다.  
+
+
 
 
 
