@@ -1,0 +1,36 @@
+<!-- js07_객체2_BOM5_Window.html -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <title>Window 객체</title>
+    <script>
+
+      // Window 객체: 웹 브라우저의 창 관리
+
+      console.log(window);
+
+      let childWin;
+      function child_open(){
+          childWin = window.open("child.html","",
+           "left=100,top=100,width=320,height=320");
+      }
+      function child_close(){
+         childWin.close();
+      }
+      function current_close(){
+         // close();
+         window.close();
+      }
+
+      
+   </script>
+    
+ </head>
+ <body>
+       <h1>부모창</h1>
+      <button onclick="child_open()">자식창 열기</button>
+      <button onclick="child_close()">자식창 닫기</button>
+      <button onclick="current_close()">현재창 닫기</button>
+
+ </body>
+ </html>

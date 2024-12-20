@@ -1,0 +1,31 @@
+<!-- js07_객체1_데이터관련7_Object.html -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <title>Object</title>
+    <script>
+
+    
+      let x = {name:"홍길동",age:20, address:"부산"};
+    
+      console.log("1. JSON의 key만 조회: " ,  Object.keys(x));
+      console.log("2. JSON의 value만 조회: " ,  Object.values(x));
+      
+      console.log("3. [key, value] 쌍으로 조회: " );
+
+      for( const [key, value] of Object.entries(x)){
+         console.log(key, value);
+      }
+
+
+
+   </script>
+    
+ </head>
+ <body>
+    <p>홍길동</p>
+    <div>이순신</div>
+
+
+ </body>
+ </html>

@@ -1,0 +1,36 @@
+<!-- js08_함수1_생성방법2가지2_주소값활용대표예.html -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <title>함수(객체)</title>
+    <script>
+
+      
+
+         let y = ["hello","world","happy"];
+         // arr.map(function);
+
+        let fun = function(ele, idx, arr){
+            return ele.toUpperCase();
+         }; 
+        //  fun(); //1. 직접 호출하는 방식의 일반적인 함수 활용법
+        let result = y.map(fun); //2. 함수가 저장된 주소값을 이용한 함수 활용법 
+                                 // fun에 저장된 200번지값을 map에 전달하는 코드임.
+                                 // y에 배열에서 값을 하나 가져왔을 때  JS가 자동으로 fun("hello",0,[ㅁㅁㅁ]) 호출된다.
+                                 // 이렇게 JS가 필요한 시점에 함수를 호출할 수 있도록 개발자는 함수명만 전달한다.
+                                 // 이러한 함수를 콜백함수(callback) 라고 부른다.
+
+
+         let result4 = y.map(function(ele, idx, arr){
+            return ele.toUpperCase();
+         });
+
+         console.log(result4);
+   </script>
+    
+ </head>
+ <body>
+     
+
+ </body>
+ </html>

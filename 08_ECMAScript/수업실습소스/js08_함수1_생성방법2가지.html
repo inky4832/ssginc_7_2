@@ -1,0 +1,38 @@
+<!-- js08_함수1_생성방법2가지.html -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <title>함수(객체)</title>
+    <script>
+
+      // 1. 함수 선언식 (이름 있는 함수)
+      
+         fun(); // 함수 정의 전에 호출 가능
+         
+         function fun(){
+          console.log("fun");
+         }
+       
+        console.log(" 1. 함수 호출 활용(일반적):")
+        fun();
+        console.log(" 2. 주소값 활용:", fun)
+         
+         console.log("###############################");
+         // 2. 함수 표현식 ( 이름 없는 함수)
+         
+         // fun2(); // 함수 정의 전에 호출 불가
+         let fun2 = function(){
+          console.log("fun2");
+         };
+         console.log(" 1. 함수 호출 활용(일반적):")
+         fun2();
+         console.log(" 2. 주소값 활용:", fun2)
+
+   </script>
+    
+ </head>
+ <body>
+     
+
+ </body>
+ </html>

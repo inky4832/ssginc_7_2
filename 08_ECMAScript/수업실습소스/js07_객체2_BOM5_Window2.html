@@ -1,0 +1,45 @@
+<!-- js07_객체2_BOM5_Window2.html -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <title>Window 객체</title>
+    <script>
+
+     
+      function open_alert(){
+         // window.alert("경고");
+         alert("경고");
+      }
+      function open_setTimeout(){
+         
+         //setTimeout(함수, 1/1000초)
+         setTimeout(function(){
+            alert("3초후 경고");
+         }, 3000); // 3초 뒤에 익명함수 실행
+      }
+
+      var interval;
+      function open_setInterval(){
+         //setInterval(함수, 1/1000초)
+          interval = setInterval(function(){
+            console.log("interval");
+          }, 2000);
+      }
+      function open_setInterval_stop(){
+         clearInterval(interval);
+         interval = null;
+      }
+      
+   </script>
+    
+ </head>
+ <body>
+       <h1>추가 메서드</h1>
+   
+        <button onclick="open_alert()">경고창</button> 
+        <button onclick="open_setTimeout()">일정시간 이후에 단 한번 실행</button> 
+        <button onclick="open_setInterval()">일정시간 이후에 반복 실행</button> 
+        <button onclick="open_setInterval_stop()">일정시간 이후에 반복 실행 중지</button> 
+
+ </body>
+ </html>

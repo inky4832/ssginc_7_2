@@ -1,0 +1,27 @@
+<!-- js07_객체2_BOM4_History.html -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <title>History 객체</title>
+    <script>
+
+      // History 객체: 웹 브라우저  뒤로/앞으로 기능 
+    
+      console.log(window.history);
+      console.log(history);
+   
+      function go_forward(){
+         // history.forward();
+         history.go(1);
+      }
+   </script>
+    
+ </head>
+ <body>
+   <h1>js07_객체2_BOM4_History.html</h1>
+      <a href="target.html">target.html</a>
+
+      <button onclick="go_forward()">앞으로</button>
+
+ </body>
+ </html>

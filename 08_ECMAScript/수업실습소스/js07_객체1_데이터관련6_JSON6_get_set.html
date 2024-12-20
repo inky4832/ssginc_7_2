@@ -1,0 +1,43 @@
+<!-- js07_객체1_데이터관련6_JSON6_get_set..html -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <title>JSON</title>
+    <script>
+
+      let person={
+         name:"홍길동",
+         age:20,
+
+         //메서드
+         setName(n){this.name = n; },
+         getName(){return this.name;},
+
+         // set,get 를 지정하면 메서드로 동작하지 않고 속성으로 동작된다.
+         set setAge(n){this.age=n;},
+         get getAge(){return this.age;}
+
+      }
+
+      person.setName("이순신");
+      console.log(person.getName());
+      
+      // person.name="유관순";
+      person.setAge=30;
+      console.log(person.getAge);
+
+
+
+
+
+
+   </script>
+    
+ </head>
+ <body>
+    <p>홍길동</p>
+    <div>이순신</div>
+
+
+ </body>
+ </html>
