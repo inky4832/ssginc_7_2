@@ -1,0 +1,32 @@
+<!-- js09_generator함수.html -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <title>arrow 함수(객체)</title>
+    <script>
+
+       
+         // generator 함수4 - return() 이용하여 중단하기
+         function*  fun(){
+            console.log("1");
+            yield 100
+            console.log("2");
+            yield 200
+            console.log("3");
+         }
+      
+         var gen = fun();
+         var result = gen.next();
+         console.log("yield 100", result); // {value: 100, done: false}
+      //중단하기
+       gen.return();
+         var result = gen.next();
+         console.log("yield 200", result); // 중단된 경우:{value: undefined, done: true} 계속진행된 경우:{value: 200, done: false}
+
+    </script>
+ </head>
+ <body>
+     
+
+ </body>
+ </html>

@@ -1,0 +1,42 @@
+<!-- js09_generator함수.html -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <title>arrow 함수(객체)</title>
+    <script>
+
+       
+         // generator 함수1 - 기본
+         function*  fun(){
+            console.log("1");
+            console.log("2");
+            console.log("3");
+         }
+      
+         var gen = fun();  // 함수 호출하면 Generator 객체 반환됨.
+         console.log(gen);
+         gen.next();
+
+          // generator 함수2 - yield
+          function*  fun2(){
+            console.log("10");
+            yield
+            console.log("20");
+            yield
+            console.log("30");
+         }
+      
+         var gen = fun2();  // 함수 호출하면 Generator 객체 반환됨.
+         console.log(gen);
+         gen.next();
+         gen.next();
+         gen.next();
+
+
+    </script>
+ </head>
+ <body>
+     
+
+ </body>
+ </html>

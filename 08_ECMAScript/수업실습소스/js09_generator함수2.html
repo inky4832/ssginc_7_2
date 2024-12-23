@@ -1,0 +1,34 @@
+<!-- js09_generator함수.html -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <title>arrow 함수(객체)</title>
+    <script>
+
+       
+         // generator 함수3 - yield 값
+         function*  fun(n, n2){
+            console.log("1");
+            yield 100
+            console.log("2");
+            yield n+n2
+            console.log("3");
+         }
+      
+         var gen = fun(10,20);
+         var result = gen.next();
+         console.log("yield 100:", result, result.value); // {value: 100, done: false}  , done: false는 yield가 사용되었음을 의미함.
+        
+         var result = gen.next();
+         console.log("yield n+n2:", result, result.value); // {value: 30, done: false}
+
+         var result = gen.next();
+         console.log("yield 없음", result ); // {value: undefined, done: true} done: true는 yield가 사용되지 않았음을 의미함.
+
+    </script>
+ </head>
+ <body>
+     
+
+ </body>
+ </html>

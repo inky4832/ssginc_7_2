@@ -1,0 +1,26 @@
+<!-- js09_generator함수.html -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <title>arrow 함수(객체)</title>
+    <script>
+
+       
+         // generator 함수5 - 활용 ( 대용량 데이터)
+         function*  fun(s){  // 전달받은 문자를 모두 대문자로 변경하는 역할
+            
+            yield s.substring(0,5).toUpperCase();
+            yield s.substring(5,10).toUpperCase();
+         }
+      
+         var gen = fun("HelloWorldHappy"); // 셀수없는 정도의 문자열이 실시간 전달 가정.
+         console.log(gen.next().value);
+         console.log(gen.next().value);
+         
+    </script>
+ </head>
+ <body>
+     
+
+ </body>
+ </html>
