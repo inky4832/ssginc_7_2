@@ -1,0 +1,39 @@
+<!-- js11_이벤트01_DOMLevel0_방식_인라인2.html -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <title>DOM Level 0 - 인라인2</title>
+    <script>
+
+      //이벤트 핸들러(함수)
+       function buttonHandler(v){
+         console.log("buttonHandler", v);
+       }
+       function init(){
+         console.log("init");
+       }
+       
+         
+    </script>
+ </head>
+ <body onload="init()">
+     <h1>인라인</h1>
+     <button onclick="buttonHandler('ok')">OK</button>
+     <hr>
+     <select name="hobby" onchange="buttonHandler(100)">
+        <option value="야구">야구</option>
+        <option value="농구">농구</option>
+        <option value="배구">배구</option>
+     </select>
+
+     <hr>
+     아이디: <input type="text" name="userid" onkeyup="buttonHandler()"
+                      onfocus="buttonHandler()" onblur="buttonHandler()">
+     <hr>
+     <img src="images/001.png" onmouseover="buttonHandler()" onmouseout="buttonHandler()">
+     <hr>
+     남:<input type="radio" name="gender" value="남" checked   onclick="buttonHandler()">
+     야구:<input type="checkbox" name="hobby" value="야구" onclick="buttonHandler()">
+
+ </body>
+ </html>

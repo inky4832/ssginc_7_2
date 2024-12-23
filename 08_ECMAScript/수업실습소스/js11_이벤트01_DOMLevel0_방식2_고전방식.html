@@ -1,0 +1,34 @@
+<!-- js11_이벤트01_DOMLevel0_방식2_고전방식.html -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <title>DOM Level 0 - 고전방식</title>
+     <script>
+
+      //1. 이벤트 소스 접근 (DOM 개념 이용)
+      var btn01 =  document.querySelector("#x");
+      console.log("OK1:" , btn01);  // null
+
+      function init(){ // DOM 트리(html)가 모두 만든후에 init() 호출됨.
+        var btn01 =  document.querySelector("#x");
+        console.log("OK3:" , btn01);  // <button id="x">OK</button>
+      }
+           
+     </script>
+ </head>
+ <body onload="init()">
+     <h1>고전방식</h1>
+     <button id="x">OK</button>
+     <button id="y">Cancel</button>
+     <hr>
+    
+     <script>
+
+      //1. 이벤트 소스 접근 (DOM 개념 이용)
+      var btn01 =  document.querySelector("#x");
+      console.log("OK2:" , btn01);  // <button id="x">OK</button>
+           
+     </script>
+
+ </body>
+ </html>
