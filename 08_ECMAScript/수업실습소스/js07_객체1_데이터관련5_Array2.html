@@ -56,19 +56,41 @@
          x3.sort(); // 기본인 오름차순
          console.log("오름차순: "+ x3);
          
-         x3.sort(function(n, n2){
-            // return n-n2; // 오름차순
-            return -(n-n2); // 내림차순
-         });
+         //일반함수
+         // x3.sort(function(n, n2){
+         //    // return n-n2; // 오름차순
+         //    return -(n-n2); // 내림차순
+         // });
+         //arrow 함수
+         // x3.sort((n, n2)=>{
+         //    // return n-n2; // 오름차순
+         //    return -(n-n2); // 내림차순
+         // });
+         x3.sort((n, n2)=>-(n-n2));
          console.log("내림차순: "+ x3);
 
          // 두 자릿수 이상인 경우 ( 반드시 함수 구현할 것)
          let x4 = [54,246,8,1,99];
          // x4.sort(); // 기본인 오름차순, 결과: 1,246,54,8,99 임. 정렬 안된 상태.
-         x4.sort(function(n, n2){
-            return n-n2; // 오름차순
-            // return -(n-n2); // 내림차순
-         }); 
+        
+         // 일반함수
+         // var xxx = function(n, n2){
+         //    return n-n2; // 오름차순
+         //    // return -(n-n2); // 내림차순
+         // };
+         // x4.sort(xxx); 
+
+         // arrow 함수
+         // var xxx = (n, n2)=>{
+         //    return n-n2; // 오름차순
+         //    //return -(n-n2); // 내림차순
+         // };
+
+         // var xxx = (n, n2)=>n-n2;
+         // x3.sort(xxx);
+         
+         x3.sort((n, n2)=>n-n2);
+
          console.log("오름차순: "+ x4);  // 1,8,54,99,246
 
          

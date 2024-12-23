@@ -6,7 +6,7 @@
     <script>
 
        
-         // 일급객체
+         // arrow 함수
 
          //1. 함수 선언식
         
@@ -37,11 +37,10 @@
          }
          fun(10,20);
          
-         var fun = (n,n2)=>{console.log("arrow1 fun",n,n2);};
-         var fun = (n,n2)=>console.log("arrow2 fun",n,n2);
+         var fun = (n,n2)=>{console.log("arrow1 fun ####",n,n2);};
+         var fun3 = (n,n2)=>console.log("arrow3 fun ####",n,n2);
         
-         fun(10,20);
-
+         fun3(10,20);
 
 
          //2. 함수 표현식
@@ -55,6 +54,19 @@
          mFun();
          
          // 나. 파라미터 있고 리턴값 없는 형태
+         var mFun = function(n){ console.log("일반 mFun", n);}; 
+         mFun(10);
+         
+         var mFun = (n)=>{ console.log("arrow1 mFun", n);}; 
+         var mFun = n=>console.log("arrow2 mFun", n); 
+         mFun(10);
+
+         var mFun = function(n,n2){ console.log("일반 mFun", n, n2);}; 
+         mFun(10,20);
+         
+         var mFun = (n,n2)=>console.log("arrow1 mFun", n, n2); 
+         mFun(10, 20);
+
     </script>
  </head>
  <body>

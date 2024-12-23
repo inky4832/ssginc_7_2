@@ -10,35 +10,54 @@
          let x = [3, 10,20,30,20, 15];
 
          console.log("1. 특정값 찾기")
-         let result = x.find(function(ele, idx, arr){
-              console.log(ele, idx, arr);
-              return ele === 20;
-            //   return ele === 200; // 찾는 값이 undefined
-         });
-         console.log(result);
+         //일반함수
+         // var result = x.find(function(ele, idx, arr){
+         //     // console.log(ele, idx, arr);
+         //      return ele === 20;
+         //    //   return ele === 200; // 찾는 값이 undefined
+         // });
 
-         console.log("2. 특정값 index 찾기")
-         let result2 = x.findIndex(function(ele, idx, arr){
-              console.log(ele, idx, arr);
-              return ele === 20;
-            //   return ele === 200; // 찾는 값이 -1
-         });
-         console.log(result2);
+         // arrow 함수
+         var result = x.find((ele, idx, arr)=>ele === 20);
+         console.log(result);
          
+         console.log("2. 특정값 index 찾기")
+         // 일반함수
+         // var result2 = x.findIndex(function(ele, idx, arr){
+         //    //console.log(ele, idx, arr);
+         //    return ele === 20;
+         //    //   return ele === 200; // 찾는 값이 -1
+         // });
+         // console.log(result2);
+         
+         // arrow 함수
+         var result2 = x.findIndex((ele, idx, arr)=>ele === 20);
+         console.log(result2);
+
+
          console.log("3. 조건에 일치하는 값 찾기 (**********)")
-         let result3 = x.filter(function(ele, idx, arr){
-            return ele%2 === 0;
-         });
+         // 일반함수
+         // var result3 = x.filter(function(ele, idx, arr){
+         //    return ele%2 === 0;
+         // });
+         // console.log("짝수값만 조회:", result3);
+         
+         // arrow 함수
+         var result3 = x.filter((ele, idx, arr)=>ele%2 === 0);
          console.log("짝수값만 조회:", result3);
          
-         
          console.log("4. 배열 값 가공 (**********)")
-         let y = ["hello","world","happy"];
-         let result4 = y.map(function(ele, idx, arr){
-            return ele.toUpperCase();
-         });
-         console.log(result4);
+         // 일반함수
+         // let y = ["hello","world","happy"];
+         // var result4 = y.map(function(ele, idx, arr){
+         //    return ele.toUpperCase();
+         // });
+         // console.log(result4);
          
+         // arrow 함수
+         var result4 = y.map((ele, idx, arr)=>ele.toUpperCase());
+         console.log(result4);
+
          
          // 배열의 값 변경
          console.log("5. 배열의 문자열들을 하나의 문자열로 변경")

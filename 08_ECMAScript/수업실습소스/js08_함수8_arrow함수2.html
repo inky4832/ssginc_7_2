@@ -1,0 +1,78 @@
+<!-- js08_함수8_arrow함수.html -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <title>arrow 함수(객체)</title>
+    <script>
+
+       
+         // arrow 함수
+
+         //1. 함수 선언식
+        
+         // 가. 파라미터 없고 리턴값 없는 형태
+         // 나. 파라미터 있고 리턴값 없는 형태
+         // 다. 파라미터 없고 리턴값 있는 형태
+         function fun(){
+            return 100;
+         }
+         var result = fun();
+         console.log("일반 fun >>>>", result);
+         
+         var fun = ()=> {return 100;};
+         var fun = ()=> 100; // 하나의 문장인 경우에는 {}와 return 생략.
+         var result =fun();
+         console.log("arrow fun >>>>>", result);
+         
+         
+         // 라. 파라미터 있고 리턴값 있는 형태
+         
+         function fun2(n, n2){
+            return n+n2;
+         }
+         var result = fun2(10,20);
+         console.log("일반 fun2 >>>>", result);
+
+         var fun2 = (n, n2)=>{return n+n2;};
+         var fun2 = (n, n2)=>n+n2;  // 하나의 문장인 경우에는 {}와 return 생략.
+         var result = fun2(10,20);
+         console.log("arrow fun2 >>>>", result);
+
+         console.log("###############################################");
+
+
+         //2. 함수 표현식
+         
+         //가. 파라미터 없고 리턴값 없는 형태
+         // 나. 파라미터 있고 리턴값 없는 형태
+         // 다. 파라미터 없고 리턴값 있는 형태
+
+         var fun = function(){ return 200;};
+         var result =fun();
+         console.log("일반fun #####", result);
+         
+         var fun = ()=>{ return 200;};
+         var fun = ()=>200;  // 하나의 문장인 경우에는 {}와 return 생략.
+         var result =fun();
+         console.log("arrow1 fun #####", result);
+         
+         // 라. 파라미터 있고 리턴값 있는 형태
+         
+         var fun2 = function (n,n2){return n+n2;};
+         
+         var result =fun2(10,20);
+         console.log("일반fun2 %%%%%%", result);
+
+         var fun2 = (n,n2) => {return n+n2;};
+         var fun2 = (n,n2) => n+n2;  // 하나의 문장인 경우에는 {}와 return 생략.
+         var result = fun2(10,20);
+         console.log("arrow2 fun %%%%%%", result);
+
+
+    </script>
+ </head>
+ <body>
+     
+
+ </body>
+ </html>

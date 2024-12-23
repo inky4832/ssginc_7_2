@@ -13,17 +13,25 @@
       function open_setTimeout(){
          
          //setTimeout(함수, 1/1000초)
-         setTimeout(function(){
-            alert("3초후 경고");
-         }, 3000); // 3초 뒤에 익명함수 실행
+         // 일반함수
+         // setTimeout(function(){
+         //    alert("3초후 경고");
+         // }, 3000); // 3초 뒤에 익명함수 실행
+
+         // arrow 함수
+         setTimeout(()=> alert("3초후 경고"), 3000);
       }
 
       var interval;
       function open_setInterval(){
          //setInterval(함수, 1/1000초)
-          interval = setInterval(function(){
-            console.log("interval");
-          }, 2000);
+         // 일반함수
+         //  interval = setInterval(function(){
+         //    console.log("interval");
+         //  }, 2000);
+
+          // arrow 함수
+          interval = setInterval(()=> console.log("interval"), 2000);
       }
       function open_setInterval_stop(){
          clearInterval(interval);
