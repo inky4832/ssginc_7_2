@@ -1,0 +1,31 @@
+<!-- js08_함수5_spread연산자이용한배열요소값전달.html -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <title>함수(객체)</title>
+    <script>
+
+       // 1. 함수 선언식
+        function fun2(n,n2){
+          console.log("fun2", n,n2);
+        }
+        
+        let arr = [10,20];
+        fun2( arr[0], arr[1]);
+        fun2(...arr);
+
+        // 2. 함수 표현식
+        let fun4 = function(n,n2){
+          console.log("fun4",n,n2);
+        };
+        fun4( arr[0], arr[1]);
+        fun4(...arr);
+
+   </script>
+    
+ </head>
+ <body>
+     
+
+ </body>
+ </html>

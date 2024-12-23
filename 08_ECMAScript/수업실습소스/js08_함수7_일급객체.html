@@ -1,0 +1,48 @@
+<!-- js08_함수7_일급객체.html -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <title>함수(객체)</title>
+    <script>
+
+       
+         // 일급객체
+
+         //1. 함수 선언식
+        
+          // 가. 함수를 변수에 저장
+
+             function fun(){
+               console.log("fun");
+             }
+             // 위 코드는 내부적으로 다음과 같다.
+             // var fun = 함수객체;
+            
+             var x = fun;
+             console.log(x, fun);
+             fun();
+             x();
+             
+             
+             
+             //2. 함수 표현식
+             
+             // 가. 함수를 변수에 저장
+             var fun2 = function(){
+               console.log("fun2");
+              };
+              
+              var x2 = fun2;
+              console.log(x2, fun2);
+              fun2();
+              x2();
+
+
+
+    </script>
+ </head>
+ <body>
+     
+
+ </body>
+ </html>

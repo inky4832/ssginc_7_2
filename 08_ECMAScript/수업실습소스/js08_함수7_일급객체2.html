@@ -1,0 +1,56 @@
+<!-- js08_함수7_일급객체.html -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <title>함수(객체)</title>
+    <script>
+
+       
+         // 일급객체
+
+         //1. 함수 선언식
+        
+          // 가. 함수를 변수에 저장
+          // 나. 함수를 함수 호출시 인자값으로 사용할 수 있다. (예> 콜백함수(callback) )
+          
+           function fun(){
+             console.log("fun");
+           }
+           function fun3(){
+             console.log("fun3");
+           }
+              // 위 코드는 내부적으로 다음과 같다.
+             // var fun = 함수객체;
+
+           function fun2(x){
+              x();  // 시스템이 필요시 () 추가함.
+           }
+
+           fun2(fun);  // fun() 가 아니다.
+           fun2(fun3);  // fun3() 가 아니다.
+
+          
+          
+          //2. 함수 표현식
+          
+          // 가. 함수를 변수에 저장
+          // 나. 함수를 함수 호출시 인자값으로 사용할 수 있다. (예> 콜백함수 )
+           
+           var fun4 = function(){
+             console.log("fun4");
+           };
+
+           var fun5 = function(x){
+               x();
+           };
+
+
+           fun5(fun4); // fun4() 가 아니다.
+
+    </script>
+ </head>
+ <body>
+     
+
+ </body>
+ </html>

@@ -1,0 +1,67 @@
+<!-- js08_함수6_기능에따른4가지형식.html -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <title>함수(객체)</title>
+    <script>
+
+       // 1. 함수 선언식
+  
+        //가.  파라미터 없고 리턴값 없는 형태
+        function fun(){
+          console.log("fun");
+        }
+        fun();
+        
+        //나. 파라미터 있고 리턴값 없는 형태
+        function fun3(n,n2){
+           console.log("fun3", n, n2);
+          }
+          fun3(10,20);
+          
+          //다. 파라미터 없고 리턴값 있는 형태
+          function fun5(){
+            return 100;
+          }
+          let result = fun5();
+          console.log("fun5", result);
+          
+          // 라. 파라미터 있고 리턴값 있는 형태
+          function fun7(n,n2){
+            return n+n2;
+          }
+          let result3 = fun7(10,20);
+          console.log("fun7", result3);
+          
+          // 2. 함수 표현식
+          //가.  파라미터 없고 리턴값 없는 형태
+          let fun2 = function(){
+            console.log("fun2");
+          };
+          fun2();
+          
+          //나. 파라미터 있고 리턴값 없는 형태
+          let fun4 = function(n, n2){
+            console.log("fun4", n, n2);
+          };
+          fun4(10,20);
+          
+          //다. 파라미터 없고 리턴값 있는 형태
+          let fun6 = function(){return 100;};
+          let result2 = fun6();
+          console.log("fun6", result2);
+          
+          // 라. 파라미터 있고 리턴값 있는 형태
+          let fun8 = function(n,n2){
+            return n+n2;
+          };
+          let result5 = fun8(10,20);
+          console.log("fun8", result5);
+          </script>
+    
+ </head>
+ <body>
+     
+
+ </body>
+ </html>

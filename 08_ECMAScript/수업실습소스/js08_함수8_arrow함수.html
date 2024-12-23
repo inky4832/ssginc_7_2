@@ -1,0 +1,64 @@
+<!-- js08_함수8_arrow함수.html -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <title>arrow 함수(객체)</title>
+    <script>
+
+       
+         // 일급객체
+
+         //1. 함수 선언식
+        
+         //가. 파라미터 없고 리턴값 없는 형태
+         function fun(){
+             console.log("일반 fun");
+         }
+         fun();
+         
+         var fun = () => {console.log("arrow1 fun");};
+         var fun = () => console.log("arrow2 fun");  // 실행문장이 하나면 {} 생략.
+         fun();
+         
+         // 나. 파라미터 있고 리턴값 없는 형태
+         
+         function fun(n){
+            console.log("일반 fun",n);
+         }
+         fun(10);
+         
+         var fun = (n)=>{console.log("arrow1 fun",n);};
+         var fun = n=>console.log("arrow2 fun",n); // 하나의 파라미터는 () 생략.
+         fun(10);
+
+ 
+         function fun(n, n2){
+            console.log("일반 fun",n, n2);
+         }
+         fun(10,20);
+         
+         var fun = (n,n2)=>{console.log("arrow1 fun",n,n2);};
+         var fun = (n,n2)=>console.log("arrow2 fun",n,n2);
+        
+         fun(10,20);
+
+
+
+         //2. 함수 표현식
+         
+         //가. 파라미터 없고 리턴값 없는 형태
+         var mFun = function(){ console.log("일반 mFun");}; 
+         mFun();
+         
+         var mFun = ()=>{ console.log("arrow1 mFun");}; 
+         var mFun = ()=>console.log("arrow2 mFun"); 
+         mFun();
+         
+         // 나. 파라미터 있고 리턴값 없는 형태
+    </script>
+ </head>
+ <body>
+     
+
+ </body>
+ </html>

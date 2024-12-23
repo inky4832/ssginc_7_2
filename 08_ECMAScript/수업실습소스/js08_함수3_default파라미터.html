@@ -1,0 +1,34 @@
+<!-- js08_함수3_default파라미터.html -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <title>함수(객체)</title>
+    <script>
+
+       // 1. 함수 선언식
+        function fun2(n=10,n2=20,n3=30){
+          console.log("fun2", n,n2,n3);
+        }
+        
+        fun2(1,2,3);
+        // 인자값이 더 적은 경우
+        fun2();
+        fun2(1,2);
+        
+        // 2. 함수 표현식
+        let fun4 = function(n=100,n2=200,n3=300){
+          console.log("fun4",n,n2,n3);
+        };
+        fun4(1,2,3);
+        // 인자값이 더 적은 경우
+        fun4(10);
+        fun4(20,30);
+
+   </script>
+    
+ </head>
+ <body>
+     
+
+ </body>
+ </html>

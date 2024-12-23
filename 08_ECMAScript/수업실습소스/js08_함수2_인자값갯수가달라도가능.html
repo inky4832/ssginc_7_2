@@ -1,0 +1,52 @@
+<!-- js08_함수2_인자값갯수가달라도가능.html -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <title>함수(객체)</title>
+    <script>
+
+       // 1. 함수 선언식
+        function fun(){
+          console.log("fun");
+        }
+        
+        fun();
+        // 인자값이 더 많은 경우
+        fun(10);
+        fun(10,20);
+        
+        function fun2(n,n2,n3){
+          console.log("fun2", n,n2,n3);
+        }
+        
+        fun2(1,2,3);
+        // 인자값이 더 적은 경우
+        fun2();
+        fun2(1,2);
+        
+        // 2. 함수 표현식
+        
+        let fun3 = function(){
+          console.log("fun3");
+        };
+        fun3();
+        // 인자값이 더 많은 경우
+        fun3(10);
+       fun3(20,30);
+
+       let fun4 = function(n,n2,n3){
+          console.log("fun4",n,n2,n3);
+        };
+        fun4(1,2,3);
+        // 인자값이 더 적은 경우
+        fun4(10);
+        fun4(20,30);
+
+   </script>
+    
+ </head>
+ <body>
+     
+
+ </body>
+ </html>
