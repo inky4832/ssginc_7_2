@@ -647,3 +647,72 @@ JS 강좌정리
 	   function fun(){
 	     return function(){}; // 중첩함수는 외부 함수인 fun() 만 사용되는 경우
 
+
+
+16. 이벤트 ( event )
+
+  1) 용어정리
+
+   가. 이벤트(event)
+     - 사용자 및 시스템(웹브라우저)이 특정 상황에서 발생시키는 사건(동작) 의미.
+     예> 사용자가 마우스를 이용해서 클릭/더블클릭/드래그/.....,
+        사용자가 키보드를 이용해서 input 태그에 값을 입력...
+	시스템(웹브라우저)이  html 를 보여줄 때 DOM 트리를 구축하는데,
+	DOM 트리 구축이 모두 완성되었을 때 시스템이 이벤트를 발생시킬 수 있다.
+
+   나. 이벤트 타입( event type)
+
+     마우스 관련:  click, dbclick, change, mouseover, mouseout, .....
+     키보드 관련:  keyup(키보드를 눌렀다가 띌때 발생), keydown(키보드를 눌렀을 때), keypress(키보드를 눌렀다가 띌때 )
+     포커스 관련:  focus , blur ( 포커스 해제)
+     시스템 관련:  load  ( DOM 트리 구축이 모두 완성되었을 때 발생 )
+
+  다. 이벤트 핸들러 ( event handler )
+    
+    - 이벤트가 발생되었을 때 실제로 처리되는 코드를 가진 함수 의미.
+    - 문법: 함수선언식 및 함수 표현식 모두 가능.
+
+  라. 이벤트 소스 ( event source )
+
+    - 실제 이벤트가 발생된 태그 의미
+
+  
+ 2) 이벤트 처리 방법 2가지
+
+ 가. DOM Level 0  ( 2가지 )
+  
+    a. 인라인 방식
+      - html의 시작태그에서  on이벤트타입 으로 된 속성이용.
+        예> <button onclick="이벤트핸들러()">OK</button>
+ 
+      - 특징은 html태그와 이벤트 처리코드가 분리 안되어 있는 방식이다.
+
+    b. 고전 방식
+
+      - html태그와 이벤트 처리코드가 분리됨.
+
+      예>
+          <script>
+	      //1. 이벤트 소스 접근 (DOM 개념 이용)
+	       document.querySelector("css선택자");
+	       예> document.querySelector("#x");
+
+	      //2. 이벤트 처리
+               document.querySelector("css선택자").on이벤트타입=이벤트핸들러; // 이벤트핸들러는 함수명만 지정해야된다.
+	       예> document.querySelector("#x").onclick=buttonHandler; // buttonHandler() 아니다.
+
+	  </script>
+
+	  <body>
+	     <button id="x">ok</button>
+	     <button id="y">cancel</button>
+
+	  </body>
+
+       - script에서 html를 성공적으로 접근하는 방법 2가지
+
+          가.  body 태그 맨 마지막에 <script> 태그 지정
+          나.  head 태그에 <script> 태그 지정 + onload 이벤트 
+    
+
+ 나. DOM Level 2
