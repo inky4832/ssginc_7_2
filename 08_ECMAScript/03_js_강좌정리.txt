@@ -695,12 +695,12 @@ JS 강좌정리
           <script>
 	      //1. 이벤트 소스 접근 (DOM 개념 이용)
 	       document.querySelector("css선택자");
-	       예> document.querySelector("#x");
+	       예> document.querySelector("#x"); // <button id="x" onclick="">ok</button>
 
 	      //2. 이벤트 처리
                document.querySelector("css선택자").on이벤트타입=이벤트핸들러; // 이벤트핸들러는 함수명만 지정해야된다.
-	       예> document.querySelector("#x").onclick=buttonHandler; // buttonHandler() 아니다.
-
+	       예> document.querySelector("#x").onclick=buttonHandler; // buttonHandler러 아니다.
+                  
 	  </script>
 
 	  <body>
@@ -716,3 +716,41 @@ JS 강좌정리
     
 
  나. DOM Level 2
+   https://developer.mozilla.org/ko/docs/Web/API/EventTarget/addEventListener
+    - html태그와 이벤트 처리코드가 분리됨.
+    - 문법:
+
+         document.querySelector("css선택자")
+	    .addEventListener( "이벤트타입", 이벤트핸들러, useCapture(true|false:기본));
+
+    
+    * useCapture 관련 내용
+     - 이벤트 전파와 관련 
+      예> 
+          <div>
+	      a
+	     <div>
+	       b
+	     </div>
+	  </div>
+
+          b 를 클릭했을 때 :  b 처리 (자식) ---------> a 처리 (부모 ), 버블링
+          b 를 클릭했을 때 :  a 처리 (부모) ---------> b 처리 (자식 ), 캡쳐링
+ 
+
+  3) 이벤트 객체
+   
+     - 이벤트가 발생되었을 때 자동생성되어 해당 이벤트 정보를 관리하는 객체. ( Event 객체 )
+     - 내부적으로 다음과 같이 자동 생성될 것이다.
+
+          var event = new Event();
+
+
+        따라서 이벤트 핸들러(함수)에서 이벤트 객체를 접근할 때는 event 변수명을 사용한다.
+
+    - 이벤트 객체에 속성과 메서드가 제공됨
+
+      속성:  event.target  <=== 이벤트 소스 정보
+
+     메서드:  event.preventDefault();  // (************)
+            event.stopPropagation();  // 이벤트 전파 방지
