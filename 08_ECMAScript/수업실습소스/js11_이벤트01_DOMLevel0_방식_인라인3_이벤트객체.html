@@ -1,0 +1,46 @@
+<!-- js11_이벤트01_DOMLevel0_방식_인라인3_이벤트객체.html -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <title>DOM Level 0 - 인라인- 이벤트 객체</title>
+    <script>
+
+      //이벤트 핸들러(함수)
+       function buttonHandler(v){
+         console.log("buttonHandler", v);
+         console.log("이벤트 객체:",  event);
+         console.log("이벤트 소스:",  event.target);
+         console.log("이벤트 소스의 body(content) 얻기:",  event.target.innerHTML , event.target.innerText);
+         console.log("이벤트 소스의 id 속성값 얻기:",  event.target.id );
+
+         // 값 변경
+         event.target.innerText = "OKKKK";
+       }
+       function init(){
+         console.log("init");
+       }
+       
+         
+    </script>
+ </head>
+ <body onload="init()">
+     <h1>인라인</h1>
+     <button id="xxx" onclick="buttonHandler('ok')">OK</button>
+     <hr>
+     <select name="hobby" onchange="buttonHandler(100)">
+        <option value="야구">야구</option>
+        <option value="농구">농구</option>
+        <option value="배구">배구</option>
+     </select>
+
+     <hr>
+     아이디: <input type="text" name="userid" onkeyup="buttonHandler()"
+                      onfocus="buttonHandler()" onblur="buttonHandler()">
+     <hr>
+     <img src="images/001.png" onmouseover="buttonHandler()" onmouseout="buttonHandler()">
+     <hr>
+     남:<input type="radio" name="gender" value="남" checked   onclick="buttonHandler()">
+     야구:<input type="checkbox" name="hobby" value="야구" onclick="buttonHandler()">
+
+ </body>
+ </html>

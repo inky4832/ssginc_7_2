@@ -1,0 +1,40 @@
+<!-- js11_이벤트02_DOMLevel2_방식1_addEventListener.html -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <title>DOM Level 2 </title>
+     <script>
+
+        function buttonHandler(){
+            console.log("buttonHandler");
+        }
+        
+        var selectHandler = function(){
+            console.log("selectHandler");
+        };
+
+        
+         function init(){
+
+            document.querySelector("#x").addEventListener("click", buttonHandler );
+
+            // document.querySelector("#z").addEventListener("change", selectHandler);
+            // document.querySelector("#z").addEventListener("change", function(){
+            //                                                     console.log("selectHandler");
+            //                                               });
+            document.querySelector("#z").addEventListener("change", ()=>console.log("selectHandler"));
+         }
+           
+     </script>
+ </head>
+ <body onload="init()">
+     <h1>addEventListener</h1>
+     <button id="x">OK</button>
+      <hr>
+      <select name="hobby" id="z">
+        <option value="야구">야구</option>
+        <option value="농구">농구</option>
+        <option value="배구">배구</option>
+       </select>
+ </body>
+ </html>

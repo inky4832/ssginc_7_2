@@ -1,0 +1,34 @@
+<!-- js11_이벤트02_DOMLevel2_방식1_addEventListener3_이벤트객체.html -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <title>DOM Level 2- 이벤트 전파 </title>
+     <script>
+
+        var handler = ()=>{
+            console.log("a");
+            console.log("이벤트 객체:",  event);
+            console.log("이벤트 소스:",  event.target);
+            console.log("이벤트 소스의 body(content) 얻기:",  event.target.innerHTML , event.target.innerText);
+        };
+
+         function init(){
+
+             document.querySelector("#x").addEventListener("click", handler , false );
+
+             document.querySelector("#y").addEventListener("click", ()=>console.log("b"), false  );
+          
+         }
+           
+     </script>
+ </head>
+ <body onload="init()">
+     <h1>이벤트 전파</h1>
+     <div id="x" style="background-color: yellow;">
+            a
+         <div id="y" style="background-color: blue;">
+            b
+         </div>   
+     </div>
+ </body>
+ </html>

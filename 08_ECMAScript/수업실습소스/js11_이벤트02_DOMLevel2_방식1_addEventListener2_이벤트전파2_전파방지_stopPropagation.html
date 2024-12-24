@@ -1,0 +1,33 @@
+<!-- js11_이벤트02_DOMLevel2_방식1_addEventListener2_이벤트전파2_전파방지_stopPropagation.html -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <title>DOM Level 2- 이벤트 전파 방지 </title>
+     <script>
+
+         function init(){
+
+             var handler =  ()=>{
+                console.log("b");
+                //이벤트 전파방지
+                event.stopPropagation();
+             };
+
+             document.querySelector("#x").addEventListener("click", ()=>console.log("a"), false );
+
+             document.querySelector("#y").addEventListener("click", handler , false  );
+          
+         }
+           
+     </script>
+ </head>
+ <body onload="init()">
+     <h1>이벤트 전파</h1>
+     <div id="x" style="background-color: yellow;">
+            a
+         <div id="y" style="background-color: blue;">
+            b
+         </div>   
+     </div>
+ </body>
+ </html>

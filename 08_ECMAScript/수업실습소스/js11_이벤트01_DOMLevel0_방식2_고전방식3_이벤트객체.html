@@ -1,0 +1,50 @@
+<!-- js11_이벤트01_DOMLevel0_방식2_고전방식3_이벤트객체.html -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <title>DOM Level 0 - 고전방식 - 이벤트 객체</title>
+     <script>
+
+      //이벤트 핸들러
+      function buttonHandler(){
+        console.log("buttonHandler");
+        console.log("이벤트 객체:",  event);
+         console.log("이벤트 소스:",  event.target);
+         console.log("이벤트 소스의 body(content) 얻기:",  event.target.innerHTML , event.target.innerText);
+      }
+
+      function init(){ // DOM 트리(html)가 모두 만든후에 init() 호출됨.
+       // var btn01 =  document.querySelector("#x");
+       // btn01.onclick=buttonHandler;  // 콜백형식으로 사용, buttonHandler() 아니다.
+        
+          document.querySelector("#x").onclick=buttonHandler;
+
+          document.querySelector("#z").onchange=buttonHandler;
+
+          document.querySelector("#xyz").onkeyup=buttonHandler;
+          document.querySelector("#xyz").onfocus=buttonHandler;
+          document.querySelector("#xyz").onblur=buttonHandler;
+
+          document.querySelector("img").onmouseover=buttonHandler;
+          document.querySelector("img").onmouseout=buttonHandler;
+      }
+           
+     </script>
+ </head>
+ <body onload="init()">
+     <h1>고전방식</h1>
+     <button id="x">OK</button>
+     <button id="y">Cancel</button>
+     <hr>
+     <select name="hobby" id="z">
+      <option value="야구">야구</option>
+      <option value="농구">농구</option>
+      <option value="배구">배구</option>
+     </select>
+     <hr>
+     아이디: <input type="text" name="userid" id="xyz">
+     <hr>
+     <img src="images/001.png" >
+     <hr>
+ </body>
+ </html>
