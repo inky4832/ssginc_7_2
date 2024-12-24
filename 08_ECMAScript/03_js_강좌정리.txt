@@ -752,5 +752,58 @@ JS 강좌정리
 
       속성:  event.target  <=== 이벤트 소스 정보
 
-     메서드:  event.preventDefault();  // (************)
+     메서드:  event.preventDefault();  // <form>태그의 서브밋 방지(************)
             event.stopPropagation();  // 이벤트 전파 방지
+
+
+17. DOM ( Document Object Model )
+
+  1) 개념
+   - 사용자가 만든 html(문서)를 웹 브라우저가 랜더링하기 위해서
+     html(문서)에 있는 태그(엘리먼트 노드) 및 속성(attribute 노드) 및 텍스트(text 노드)에 해당하는 객체를 생성하고 
+     생성된 객체를 다음과 같이 트리(tree)로 만들어서 참조해서 관리하는 방법론.
+
+               html
+	         |
+         head         body
+	                |
+	           p  div 
+
+   2) DOM 접근 방법
+
+    - Document 객체를 참조하는 document 변수명을 사용한다.
+      ( document 는 Window 객체의 속성으로 제공된다. )
+
+    - Document 객체의 속성 및 메서드를 활용해서 DOM 트리를 관리(조회,수정,삭제,추가)가 가능하다. (***********)
+
+       속성:    document.body <==  <body> 참조
+
+
+       메서드:   var x = document.getElementById("아이디값");  // 객체 값(태그,엘리먼트) 하나 리턴
+               var x2 = document.getElementsByClassName("클래스값");  // 배열값(태그,엘리먼트)로 리턴
+	       var x3 = document.getElementsByName("tag name속성값"); // 배열값(태그,엘리먼트)로 리턴
+
+	       var y = document.querySelector("css 선택자");       // 객체 값 하나만 리턴
+	       var y2 = document.querySelectorAll("css 선택자");   // 배열값(태그,엘리먼트)로 리턴
+
+    - 주의할 점은 반드시 HTML에 해당되는 DOM 이 완성된 후에 접근이 가능하다. (***********)
+
+
+  3) 태그의 값 조회/설정 방법
+
+    가.  <시작>몸체(body)</종료>
+       예> <h1>값</h1>
+          <p>값</h1>
+        
+       ==> tag.innerText 속성 , tag.innerHTML 속성
+
+    나.  사용자 입력 태그 ( input )
+      예> <input type="text" name="userid" value="값" >
+
+      ==>  tag.value 속성 이용
+
+    
+    다.  태그 속성값 
+    예> <a href="daum.net">다음</a>
+
+    ==> tag.href 속성 이용
