@@ -1,0 +1,30 @@
+<!-- js12_DOM.html -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <title>preventDefault </title>
+     <script>
+
+       function get(){
+        // h1 태그 접근
+        var h1 = document.querySelector("h1");
+        console.dir(h1);
+        console.log("값출력: ", h1.innerText, h1.innerHTML);
+        
+    }
+    function set(){
+        // h1 태그 접근
+        var h1 = document.querySelector("h1");
+         h1.innerText="DOM2";
+        }
+           
+     </script>
+ </head>
+ <body>
+     <h1>DOM</h1>
+    
+     <button id="x" onclick="get()">값얻기</button>
+     <button id="x2" onclick="set()">값수정</button>
+    
+ </body>
+ </html>

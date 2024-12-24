@@ -1,0 +1,38 @@
+<!-- js11_이벤트03_form태그의submit방지_preventDefault.html -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <title>preventDefault </title>
+     <script>
+
+         function go(){
+            //alert("go");
+            // userid 와 passwd 체크해서 모두 입력되었으면 submit 가능하게 하고 
+            // 하나라도 입력이 안되어 있으면 submit 방지한다.
+            if(false){ // 모두 입력된 경우
+
+            }else{    // 하나라도 입력이 안되어 있는 경우
+                alert("userid 와 passwd 다시 확인하세요");
+                event.preventDefault();
+            }
+         }
+           
+     </script>
+ </head>
+ <body>
+     <h1>2. preventDefault 적용된 경우</h1>
+     <form action="target.html" method="get"  onsubmit="go()">
+		아이디: <input type="text" name="userid"> <br>
+		비밀번호: <input type="password" name="passwd"> <br>
+		<input type="submit" value="로그인">
+	</form>
+
+     <h1>1. preventDefault 적용안된 경우</h1>
+     <form action="target.html" method="get">
+		아이디: <input type="text" name="userid"> <br>
+		비밀번호: <input type="password" name="passwd"> <br>
+		<input type="submit" value="로그인">
+	</form>
+    
+ </body>
+ </html>

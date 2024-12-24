@@ -1,0 +1,31 @@
+<!-- js12_DOM.html -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <title>preventDefault </title>
+     <script>
+
+    function get(){
+    // a 태그 접근
+     var a = document.querySelector("a");
+     console.dir(a);
+     console.log("url 출력:" , a.href);
+    }
+    function set(){
+        // a태그 접근후 url과 body 변경하기
+        var a = document.querySelector("a");
+        a.href="http://www.google.com";
+        a.innerText="구글";
+    }
+           
+     </script>
+ </head>
+ <body>
+     <h1>DOM</h1>
+     <a href="http://www.daum.net">다음</a>
+     <hr>
+     <button id="x" onclick="get()">url 얻기</button>
+     <button id="x2" onclick="set()">구글로 url 수정</button>
+    
+ </body>
+ </html>

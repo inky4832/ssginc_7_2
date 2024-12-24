@@ -1,0 +1,32 @@
+<!-- js12_DOM.html -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <title>preventDefault </title>
+     <script>
+
+    function get(){
+    // input 태그 접근
+      var input = document.querySelector("#mesg");
+      console.dir(input);
+      console.log("입력값:", input.value);
+      
+    }
+    function set(){
+        // input태그값을 h1 태그에 설정하기
+        var h1 = document.querySelector("h1");
+        var input = document.querySelector("#mesg");
+
+        h1.innerText = input.value;
+    }
+           
+     </script>
+ </head>
+ <body>
+     <h1>DOM</h1>
+     변경값: <input type="text" name="mesg" id="mesg">
+     <button id="x" onclick="get()">입력값 얻기</button>
+     <button id="x2" onclick="set()">값수정</button>
+    
+ </body>
+ </html>
