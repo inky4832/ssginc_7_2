@@ -17,3 +17,11 @@
    https://zrr.kr/59Rc
 
    pw: KDTBCB
+
+
+
+- 시간 : 금일(24일) 13시-15시
+- Zoom : 
+https://zoom.us/j/95897490584?pwd=VqQzFqqXvdSdJBl6W2WEgbfwhsg6M1.1
+( 회의 ID: 958 9749 0584
+  암호: 123456)
